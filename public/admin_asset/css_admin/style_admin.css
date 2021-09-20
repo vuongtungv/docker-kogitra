@@ -1,0 +1,20 @@
+.style-actions {
+  float: initial !important;
+  margin-left: 150px; }
+
+.tv-label-default {
+  font-size: 16px !important;
+  transition: .2s ease all;
+  color: #999 !important; }
+
+.width-stt {
+  width: 30px;
+  text-align: center; }
+
+.td-image img {
+  width: 150px; }
+
+.page-header.navbar .page-logo .logo-default {
+  margin-top: 15px; }
+
+/*# sourceMappingURL=style_admin.css.map */
