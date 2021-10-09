@@ -70,6 +70,14 @@
                 {{--<span class="arrow open"></span>--}}
             </a>
         </li>
+        <li class="nav-item {{ (request()->is('admin/brands')) ? 'active open ' : '' }}">
+            <a href="{{ route('admin_brands') }}" class="nav-link nav-toggle">
+                <i class="icon-folder"></i>
+                <span class="title">Brands</span>
+                <span class="selected"></span>
+                {{--<span class="arrow open"></span>--}}
+            </a>
+        </li>
         <li class="nav-item  {{ (request()->is('admin/banners/*')) ? 'open' : '' }}">
             <a href="javascript:;" class="nav-link nav-toggle">
                 <i class="icon-puzzle"></i>
@@ -323,6 +331,34 @@
         <li class="heading">
             <h3 class="uppercase">Pages</h3>
         </li>
+        <li class="nav-item {{ (request()->is('admin/product/config/*')) ? 'open' : '' }}">
+            <a href="javascript:;" class="nav-link nav-toggle">
+                <i class="icon-equalizer"></i>
+                <span class="title">Cấu hình sản phẩm</span>
+                <span class="arrow"></span>
+            </a>
+            <ul class="sub-menu" style="{{ (request()->is('admin/product/config/*')) ? 'display:block' : '' }}">
+                <li class="nav-item  {{ (request()->is('admin/product/config/style/*') || request()->is('admin/product/config/style')) ? 'active' : '' }}">
+                    <a href="{{ route('admin_product_style') }}" class="nav-link ">
+                        <i class="icon-magic-wand"></i>
+                        <span class="title">Style</span>
+                    </a>
+                </li>
+                <li class="nav-item  {{ (request()->is('admin/product/config/color/*') || request()->is('admin/product/config/color')) ? 'active' : '' }}">
+                    <a href="{{ route('admin_product_color') }}" class="nav-link ">
+                        <i class="icon-diamond"></i>
+                        <span class="title">Color</span>
+                    </a>
+                </li>
+                <li class="nav-item {{ (request()->is('admin/product/config/size/*') || request()->is('admin/product/config/size')) ? 'active' : '' }}">
+                    <a href="{{ route('admin_product_size') }}" class="nav-link ">
+                        <i class="icon-size-actual"></i>
+                        <span class="title">Size</span>
+                    </a>
+                </li>
+            </ul>
+        </li>
+
         <li class="nav-item  ">
             <a href="javascript:;" class="nav-link nav-toggle">
                 <i class="icon-basket"></i>

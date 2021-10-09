@@ -32,14 +32,14 @@
                         <div class="kodory-banner style-01 left-top new">
                             <div class="banner-inner">
                                 <figure class="banner-thumb">
-                                    <img src="client_asset/images/banner41.jpg"
+                                    <img src="{{str_replace('/original/', '/new_collection/', '/storage/app/public/'.$getBannerNewCollection[0]->image)}}"
                                          class="attachment-full size-full" alt="img">
                                 </figure>
                                 <div class="banner-info ">
                                     <div class="banner-content">
                                         <div class="title-wrap">
                                             <h6 class="title">
-                                                <a target=" _blank" href="#">New Collection</a>
+                                                <a target="{{$getBannerNewCollection[0]->target}}" href="{{$getBannerNewCollection[0]->link}}">{{$getBannerNewCollection[0]->name}}</a>
                                             </h6>
                                         </div>
                                     </div>
@@ -51,14 +51,14 @@
                         <div class="kodory-banner style-01 left-center">
                             <div class="banner-inner">
                                 <figure class="banner-thumb">
-                                    <img src="client_asset/images/banner42.jpg"
+                                    <img src="{{str_replace('/original/', '/with_style/', '/storage/app/public/'.$getBannerWithStyle[0]->image)}}"
                                          class="attachment-full size-full" alt="img">
                                 </figure>
                                 <div class="banner-info ">
                                     <div class="banner-content">
                                         <div class="title-wrap">
                                             <h6 class="title">
-                                                <a target=" _blank" href="#">With Style</a>
+                                                <a target="{{$getBannerWithStyle[0]->target}}" href="{{$getBannerWithStyle[0]->link}}">{{$getBannerWithStyle[0]->name}}</a>
                                             </h6>
                                         </div>
                                     </div>
@@ -66,46 +66,28 @@
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col-6">
-                                <div class="kodory-banner style-01 left-top  kodory_custom_5d67efefec0b8 ">
-                                    <div class="banner-inner">
-                                        <figure class="banner-thumb">
-                                            <img src="client_asset/images/banner43.jpg"
-                                                 class="attachment-full size-full" alt="img"></figure>
-                                        <div class="banner-info ">
-                                            <div class="banner-content">
-                                                <div class="title-wrap">
-                                                    <h6 class="title">
-                                                        <a target=" _blank" href="#">Kid Set</a>
-                                                    </h6>
-                                                </div>
-                                                <div class="button-wrap">
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-6">
-                                <div class="kodory-banner style-01 left-bottom">
-                                    <div class="banner-inner">
-                                        <figure class="banner-thumb">
-                                            <img src="client_asset/images/banner44.jpg"
-                                                 class="attachment-full size-full" alt="img"></figure>
-                                        <div class="banner-info ">
-                                            <div class="banner-content">
-                                                <div class="title-wrap">
-                                                    <h6 class="title">
-                                                        <a target=" _blank" href="#">Shirts</a>
-                                                    </h6>
-                                                </div>
-                                                <div class="button-wrap">
+                            @foreach($getBannerSetStyle as $item)
+                                <div class="col-6">
+                                    <div class="kodory-banner style-01 left-top  kodory_custom_5d67efefec0b8 ">
+                                        <div class="banner-inner">
+                                            <figure class="banner-thumb">
+                                                <img src="{{str_replace('/original/', '/set_style/', '/storage/app/public/'.$item->image)}}"
+                                                     class="attachment-full size-full" alt="img"></figure>
+                                            <div class="banner-info ">
+                                                <div class="banner-content">
+                                                    <div class="title-wrap">
+                                                        <h6 class="title">
+                                                            <a target="{{$item->target}}" href="#">{{$item->name}}</a>
+                                                        </h6>
+                                                    </div>
+                                                    <div class="button-wrap">
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            @endforeach
                         </div>
                     </div>
                 </div>
@@ -1883,50 +1865,29 @@
                     </div>
                     <div class="col-md-12 col-lg-4">
                         <div class="row">
+                            @foreach($bannersSelling as $item)
                             <div class="col-lg-12 col-md-6 col-sm-12">
                                 <div class="kodory-banner style-12 left-center">
                                     <div class="banner-inner">
                                         <figure class="banner-thumb">
-                                            <img src="client_asset/images/banner4-6.jpg"
+                                            <img src="{{ '/storage/app/public/'.str_replace('/original/','/small/',$item->image )}}"
                                                  class="attachment-full size-full" alt="img"></figure>
                                         <div class="banner-info ">
                                             <div class="banner-content">
                                                 <div class="title-wrap">
-                                                    <h6 class="title">Designer <br>
-                                                        T-shirt</h6>
+                                                    <h6 class="title">{{ $item->name }}</h6>
                                                 </div>
-                                                <div class="cate">Adipiscing elitet</div>
+                                                <div class="cate">{!! $item->brief !!}</div>
                                                 <div class="button-wrap">
-                                                    <a class="button" target="_self"
-                                                       href="shop.html"><span>Show now</span></a>
+                                                    <a class="button" target="{{$item->target}}"
+                                                       href="{{$item->link}}"><span>Show now</span></a>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-lg-12 col-md-6 col-sm-12">
-                                <div class="kodory-banner style-12 left-center">
-                                    <div class="banner-inner">
-                                        <figure class="banner-thumb">
-                                            <img src="client_asset/images/banner4-7.jpg"
-                                                 class="attachment-full size-full" alt="img"></figure>
-                                        <div class="banner-info ">
-                                            <div class="banner-content">
-                                                <div class="title-wrap">
-                                                    <h6 class="title">Fashion <br>
-                                                        Clothes</h6>
-                                                </div>
-                                                <div class="cate">Cras pulvinar</div>
-                                                <div class="button-wrap">
-                                                    <a class="button" target="_self"
-                                                       href="shop.html"><span>Show now</span></a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                            @endforeach
                         </div>
                     </div>
                 </div>
@@ -1939,46 +1900,16 @@
                     <div class="owl-slick equal-container better-height"
                          data-slick="{&quot;arrows&quot;:true,&quot;slidesMargin&quot;:60,&quot;dots&quot;:false,&quot;infinite&quot;:false,&quot;speed&quot;:300,&quot;slidesToShow&quot;:5,&quot;rows&quot;:1}"
                          data-responsive="[{&quot;breakpoint&quot;:480,&quot;settings&quot;:{&quot;slidesToShow&quot;:3,&quot;slidesMargin&quot;:&quot;30&quot;}},{&quot;breakpoint&quot;:768,&quot;settings&quot;:{&quot;slidesToShow&quot;:3,&quot;slidesMargin&quot;:&quot;30&quot;}},{&quot;breakpoint&quot;:992,&quot;settings&quot;:{&quot;slidesToShow&quot;:4,&quot;slidesMargin&quot;:&quot;40&quot;}},{&quot;breakpoint&quot;:1200,&quot;settings&quot;:{&quot;slidesToShow&quot;:5,&quot;slidesMargin&quot;:&quot;50&quot;}},{&quot;breakpoint&quot;:1500,&quot;settings&quot;:{&quot;slidesToShow&quot;:5,&quot;slidesMargin&quot;:&quot;60&quot;}}]">
-                        <div class="dreaming_single_image dreaming_content_element az_align_center">
-                            <figure class="dreaming_wrapper az_figure">
-                                <div class="az_single_image-wrapper   az_box_border_grey effect bounce-in "><img
-                                        src="client_asset/images/brand-logo-1.png"
-                                        class="az_single_image-img attachment-full" alt="img" width="200" height="100">
-                                </div>
-                            </figure>
-                        </div>
-                        <div class="dreaming_single_image dreaming_content_element az_align_center">
-                            <figure class="dreaming_wrapper az_figure">
-                                <div class="az_single_image-wrapper   az_box_border_grey effect bounce-in "><img
-                                        src="client_asset/images/brand-logo-5.png"
-                                        class="az_single_image-img attachment-full" alt="img" width="200" height="100">
-                                </div>
-                            </figure>
-                        </div>
-                        <div class="dreaming_single_image dreaming_content_element az_align_center">
-                            <figure class="dreaming_wrapper az_figure">
-                                <div class="az_single_image-wrapper   az_box_border_grey effect bounce-in "><img
-                                        src="client_asset/images/brand-logo-4.png"
-                                        class="az_single_image-img attachment-full" alt="img" width="200" height="100">
-                                </div>
-                            </figure>
-                        </div>
-                        <div class="dreaming_single_image dreaming_content_element az_align_center">
-                            <figure class="dreaming_wrapper az_figure">
-                                <div class="az_single_image-wrapper   az_box_border_grey effect bounce-in "><img
-                                        src="client_asset/images/brand-logo-3.png"
-                                        class="az_single_image-img attachment-full" alt="img" width="200" height="100">
-                                </div>
-                            </figure>
-                        </div>
-                        <div class="dreaming_single_image dreaming_content_element az_align_center">
-                            <figure class="dreaming_wrapper az_figure">
-                                <div class="az_single_image-wrapper   az_box_border_grey effect bounce-in "><img
-                                        src="client_asset/images/brand-logo-2.png"
-                                        class="az_single_image-img attachment-full" alt="img" width="200" height="100">
-                                </div>
-                            </figure>
-                        </div>
+                        @foreach($brandsHome as $item)
+                            <div class="dreaming_single_image dreaming_content_element az_align_center">
+                                <figure class="dreaming_wrapper az_figure">
+                                    <div class="az_single_image-wrapper   az_box_border_grey effect bounce-in ">
+                                        <img src="{{ '/storage/app/public/'.str_replace('/original/','/small/',$item->image )}}"
+                                            class="az_single_image-img attachment-full" alt="img" width="200" height="100">
+                                    </div>
+                                </figure>
+                            </div>    
+                        @endforeach
                     </div>
                 </div>
             </div>

@@ -16,12 +16,22 @@ class BannersController extends Controller
     public $path_base;
     public $fileUploadController;
     public $category_banners;
+    public $array_size;
 
     public function __construct()
     {
         $this->fileUploadController = new FileUploadController();
         $this->banners = new BannersModel();
         $this->category_banners = new BannersCategoryModel();
+
+        $this->array_size=[
+            'big' => '1920, 940',
+            'large' => '1920, 940',
+            'small' => '370, 215',
+            'new_collection' => '470, 720',
+            'with_style' => '670, 345',
+            'set_style' => '320, 345',
+        ];
         $this->path_base = '/images/banners/banners';
     }
 
@@ -68,6 +78,7 @@ class BannersController extends Controller
             $image = $request->file('image');
 
             $file_path = $this->fileUploadController->uploadImage($image, $this->path_base);
+            $this->fileUploadController->uploadImageFit($image, $this->path_base, $this->array_size);
 
             $newBanner->image = $file_path;
         }
@@ -117,6 +128,7 @@ class BannersController extends Controller
             $image = $request->file('image');
 
             $file_path = $this->fileUploadController->uploadImage($image, $this->path_base);
+            $this->fileUploadController->uploadImageFit($image, $this->path_base, $this->array_size);
 
             $detail->image = $file_path;
         }
