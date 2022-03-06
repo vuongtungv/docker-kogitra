@@ -115,8 +115,20 @@ Route::group(['middleware' => 'checkAdminLogin', '/admin', 'prefix'=> 'admin'],f
     Route::get('/product/config/size/edit/{id}', [ 'uses' => 'Admin\products\SizeController@view_edit'])->name('admin_edit_product_size');
     Route::post('/product/config/size/edit/{id}', [ 'uses' => 'Admin\products\SizeController@update'])->name('post_admin_edit_product_size');
 
+
     Route::get('/product/category', [ 'uses' => 'Admin\products\ProductsCategoryController@index'])->name('admin_products_category');
-    Route::get('/product/list', [ 'uses' => 'Admin\products\ProductsController@index'])->name('admin_products');
+    Route::get('/product/category/add', [ 'uses' => 'Admin\products\ProductsCategoryController@view_add'])->name('admin_add_products_category');
+    Route::post('/product/category/add', [ 'uses' => 'Admin\products\ProductsCategoryController@add'])->name('post_admin_add_products_category');
+    Route::get('/product/category/edit/{id}', [ 'uses' => 'Admin\products\ProductsCategoryController@view_edit'])->name('admin_edit_products_category');
+    Route::post('/product/category/edit/{id}', [ 'uses' => 'Admin\products\ProductsCategoryController@update'])->name('post_admin_edit_products_category');
+
+    Route::get('/product/product', [ 'uses' => 'Admin\products\ProductsController@index'])->name('admin_products_products');
+    Route::get('/product/product/add', [ 'uses' => 'Admin\products\ProductsController@create'])->name('admin_add_products_products');
+    Route::post('/product/product', [ 'uses' => 'Admin\products\ProductsController@store'])->name('post_admin_add_products_products');
+    Route::get('/product/product/edit/{id}', [ 'uses' => 'Admin\products\ProductsController@show'])->name('admin_edit_products_products');
+    Route::post('/product/product/delete/image', [ 'uses' => 'Admin\products\ProductsController@deleteItemImage'])->name('delete_item_image_in_detail_product');
+    Route::post('/product/product/delete/option', [ 'uses' => 'Admin\products\ProductsController@deleteOption'])->name('delete_item_option_in_detail_product');
+    Route::post('/product/product/edit/{id}', [ 'uses' => 'Admin\products\ProductsController@update'])->name('post_admin_edit_products_products');
 
 
 

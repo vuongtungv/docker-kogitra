@@ -33,7 +33,7 @@
                     </ul>
                 </div>
             @endif
-            <form action="{{ route('post_admin_product_color_add') }}" id="add-banners" method="POST" role="form" enctype="multipart/form-data">
+            <form action="{{ route('post_admin_edit_product_color', $detail->id) }}" id="add-banners" method="POST" role="form" enctype="multipart/form-data">
                 {{ csrf_field()}}
                 <div class="form-body">
                     <div class="form-group form-md-line-input form-md-floating-label">

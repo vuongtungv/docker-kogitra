@@ -26,6 +26,9 @@
 .login{
     background-color: #5c97bd;
     font-family: Roboto-Regular;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
 }
 .logo{
 
@@ -92,6 +95,10 @@
 }
 .copyright{
     text-align: center;
+    width: 100%;
+    position: absolute;
+    top: 80%;
+    height: fit-content;
 }
 
 

@@ -15,20 +15,20 @@
                 {{--<span class="arrow open"></span>--}}
             </a>
         </li>
-        <li class="nav-item  ">
+        <li class="nav-item {{ (request()->is('admin/product/*')) ? 'open' : '' }}">
             <a href="javascript:;" class="nav-link nav-toggle">
-                <i class="icon-puzzle"></i>
+                <i class="icon-graph"></i>
                 <span class="title">Sản phẩm</span>
                 <span class="arrow"></span>
             </a>
-            <ul class="sub-menu">
-                <li class="nav-item  ">
+            <ul class="sub-menu" style="{{ (request()->is('admin/product/*')) ? 'display:block' : '' }}">
+                <li class="nav-item  {{ (request()->is('admin/product/category/*') || request()->is('admin/product/category')) ? 'active' : '' }}">
                     <a href="{{ route('admin_products_category') }}" class="nav-link ">
                         <span class="title">Danh mục</span>
                     </a>
                 </li>
-                <li class="nav-item  ">
-                    <a href="{{ route('admin_products') }}" class="nav-link ">
+                <li class="nav-item  {{ (request()->is('admin/product/product/*') || request()->is('admin/product/product')) ? 'active' : '' }}">
+                    <a href="{{ route('admin_products_products') }}" class="nav-link ">
                         <span class="title">Danh sách</span>
                     </a>
                 </li>

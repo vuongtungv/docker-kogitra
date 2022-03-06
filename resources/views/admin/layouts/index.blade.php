@@ -26,7 +26,8 @@
     <link href="admin_asset/global/plugins/bootstrap-datepicker/css/bootstrap-datepicker3.min.css" rel="stylesheet" type="text/css" />
     <!-- END PAGE LEVEL PLUGINS -->
     <!-- BEGIN THEME GLOBAL STYLES -->
-    <link href="admin_asset/global/css/components.min.css" rel="stylesheet" id="style_components" type="text/css" />
+    {{--<link href="admin_asset/global/css/components.min.css" rel="stylesheet" id="style_components" type="text/css" />--}}
+    <link href="admin_asset/global/css/components-md.min.css" rel="stylesheet" id="style_components" type="text/css" />
     <link href="admin_asset/global/css/plugins.min.css" rel="stylesheet" type="text/css" />
     <!-- END THEME GLOBAL STYLES -->
 
@@ -48,8 +49,9 @@
 
     {{--select 2--}}
     <link href="admin_asset/global/plugins/select2/css/select2.min.css" rel="stylesheet" type="text/css" />
-
-
+    <link href="admin_asset/global/plugins/select2/css/select2-bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="admin_asset/global/plugins/bootstrap-wysihtml5/bootstrap-wysihtml5.css" rel="stylesheet" type="text/css" />
+    <link href="admin_asset/global/plugins/bootstrap-markdown/css/bootstrap-markdown.min.css" rel="stylesheet" type="text/css" />
 
     <link rel="apple-touch-icon" sizes="57x57" href="admin_asset/images/favicon/apple-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="60x60" href="admin_asset/images/favicon/apple-icon-60x60.png">
@@ -69,7 +71,7 @@
     <meta name="msapplication-TileImage" content="admin_asset/images/favicon/ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
 
-
+    @yield('css');
 
     <!-- Css-->
     <link href="admin_asset/css_admin/style_admin.css" rel="stylesheet">
