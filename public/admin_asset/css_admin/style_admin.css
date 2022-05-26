@@ -28,4 +28,18 @@
 .mb-0 {
   margin-bottom: 0px; }
 
+.table-style-default.table-products td {
+  vertical-align: middle; }
+  .table-style-default.table-products td.td-image img {
+    width: 40px; }
+
+.sa-button-container button {
+  text-transform: initial !important;
+  border-radius: 8px !important;
+  width: 115px;
+  border: none;
+  padding: 10px !important; }
+  .sa-button-container button.cancel {
+    margin-right: 25px; }
+
 /*# sourceMappingURL=style_admin.css.map */

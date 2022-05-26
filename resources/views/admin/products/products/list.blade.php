@@ -38,39 +38,49 @@
                     </div>
                     <div class="tools"></div>
                 </div>
-                <div class="portlet-body">
-                    <table class="table table-striped table-bordered table-hover" id="sample_1">
+                <div class="portlet-body" style="padding-top: 0px;">
+                    @if(count($errors)>0)
+                        <div class="alert alert-danger">
+                            @foreach($errors->all() as $err)
+                                {{$err}}<br/>
+                            @endforeach
+                        </div>
+                    @endif
+                    @if(session('success'))
+                        <div class="alert alert-success">
+                            {{session('success')}}
+                        </div>
+                    @endif
+                    <table class="table table-bordered table-hover table-style-default table-products" id="sample_1">
                         <thead>
                             <tr>
                                 <th class="width-stt">STT</th>
-                                <th>Ảnh</th>
+                                <th width="50" class="text-center">Ảnh</th>
                                 <th>Tên sản phẩm</th>
                                 <th>Danh mục</th>
-                                <th>Trạng thái</th>
+                                <th width="40">Trạng thái</th>
+                                <th width="175"></th>
                             </tr>
                         </thead>
-                        <tfoot>
-                            <tr>
-                                <th class="width-stt">STT</th>
-                                <th>Ảnh</th>
-                                <th>Tên sản phẩm</th>
-                                <th>Danh mục</th>
-                                <th>Trạng thái</th>
-                            </tr>
-                        </tfoot>
                         <tbody>
                             @foreach($listProducts  as $key=>$item)
-                                <tr>
+                                <tr data-id="{{$item->id}}">
                                     <td class="text-center">{{ $key+1 }}</td>
-                                    <td><img src="{{ $item->image ? '/storage/app/public/'. str_replace('/original/', '/tiny/', $item->image) : ''}}" alt=""></td>
+                                    <td class="text-center td-image"><img src="{{ $item->image ? '/storage/app/public/'. str_replace('/original/', '/tiny/', $item->image) : ''}}" alt=""></td>
                                     <td><a href="{{ route('admin_edit_products_products' , $item->id) }}">{{ $item->name }}</a></td>
                                     <td>{{ $item->category_name }}</td>
-                                    <td>
+                                    <td class="text-center">
                                         @if($item->published == 1)
-                                            Hoạt động
+                                            <span class="label label-sm label-success"> Hoạt động </span>
                                         @else
-                                            Ngừng
+                                            <span class="label label-sm label-danger"> Khóa </span>
                                         @endif
+                                    </td>
+                                    <td>
+                                        <a href="{{ route('admin_edit_products_products' , $item->id) }}" class="btn btn-outline btn-circle btn-sm purple">
+                                            <i class="fa fa-edit"></i> Edit </a>
+                                        <a data-id="{{$item->id}}" data-name="{{$item->name}}" href="{{ route('admin_delete_products_products' , $item->id) }}" class="btn btn-outline btn-circle dark btn-sm black show_confirm">
+                                            <i class="fa fa-trash-o"></i> Delete </a>
                                     </td>
                                 </tr>
                             @endforeach
@@ -81,5 +91,37 @@
             <!-- END EXAMPLE TABLE PORTLET-->
         </div>
     </div>
+    {{ csrf_field()}}
     <!-- END BEGIN PAGE BASE CONTENT -->
+@endsection
+
+@section('js')
+    <script type="text/javascript">
+        $(document).on('click', '.show_confirm', function (e) {
+            e.preventDefault();
+            const _token = $('input[name="_token"]').val();
+            let id = $(this).data('id');
+            let name = $(this).data('name');
+            swal({
+                    title: `Bạn có chắc chắn muốn xóa: ${name} !`,
+                    type: "warning",
+                    confirmButtonClass: "btn-danger",
+                    confirmButtonText: "Yes!",
+                    showCancelButton: true,
+                },
+                function() {
+                    $.ajax({
+                        type: "POST",
+                        url: "{{ route('admin_delete_products_products') }}",
+                        data: {id:id , _token:_token},
+                        success: function (data) {
+                            //
+                            // location.reload();
+                            $("table tr[data-id='"  + id + "']").remove();
+                        }
+                    });
+                });
+        });
+
+    </script>
 @endsection

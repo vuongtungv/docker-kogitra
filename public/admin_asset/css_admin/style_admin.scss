@@ -44,3 +44,31 @@
 .mb-0{
     margin-bottom: 0px;
 }
+
+
+.table-style-default{
+    &.table-products{
+        td{
+            vertical-align: middle;
+            &.td-image{
+                img{
+                    width: 40px;
+                }
+            }
+        }
+    }
+}
+
+// btn comfirm
+.sa-button-container{
+    button{
+        text-transform: initial !important;
+        border-radius: 8px !important;
+        width: 115px;
+        border: none;
+        padding: 10px !important;
+        &.cancel{
+            margin-right: 25px;
+        }
+    }
+}

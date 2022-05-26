@@ -3,6 +3,8 @@
 namespace App\Models\admin\products;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Notifications\Notifiable;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
 
@@ -10,12 +12,14 @@ class ProductModel extends Model
 {
     //
     //
+    use Notifiable,
+        SoftDeletes;// add soft delete
     protected $table = 'tv_product';
 
 
     public function getAll(){
 
-        $listProducts = DB::table($this->table)->get();
+        $listProducts = DB::table($this->table)->where('deleted_at', null)->get();
         return $listProducts;
     }
 
@@ -75,7 +79,7 @@ class ProductModel extends Model
 
 
 
-    public function deleteItemOption($request, $array_size = '' ){
+    public function deleteItemOptionByIdOption($request, $array_size = '' ){
         if($request->id_option){
             DB::table("tv_product_option")
                 ->where("id" , '=', $request->id_option)
@@ -115,4 +119,35 @@ class ProductModel extends Model
         }
         return false;
     }
+
+
+    /**
+     * Xóa sản phẩm
+     *
+    */
+    public function destroyById($id, $array_size = ''){
+        ProductModel::find($id)->delete();
+
+        // xóa các product option
+        $this->deleteItemOptionById($id, $array_size);
+
+
+        return true;
+    }
+
+    public function deleteItemOptionById($id ,$array_size = ''){
+        DB::table("tv_product_option")
+            ->where("product_id" , '=', $id)
+            ->delete();
+
+        $list_img = DB::table('tv_product_image')
+            ->where("product_id" , "=",$id)->get();
+        if($list_img){
+            foreach ($list_img as $lm){
+                $this->deleteItemImage($lm->image, $array_size);
+            }
+        }
+
+    }
+
 }

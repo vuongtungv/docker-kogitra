@@ -30,6 +30,7 @@ class CreateTableTvProductTable extends Migration
             $table->text('description')->nullable();
             $table->tinyInteger('show_home')->nullable();
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

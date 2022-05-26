@@ -276,9 +276,14 @@ class ProductsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Request $request)
     {
         //
+        $modelProduct = new ProductModel();
+        $modelProduct->destroyById($request->id, $this->array_size);
+
+        return redirect()->route('admin_products_products')
+            ->with('success','Product deleted successfully');
     }
 
 
@@ -288,54 +293,56 @@ class ProductsController extends Controller
 
         $modelProduct = new ProductModel();
 
-        foreach ($product_option as $key => $item_option){
-            if($item_option['name_option']
-                && $item_option['style_id']
-                && $item_option['color_id']
-                && $item_option['size_id']
-                && $item_option['quantity']
-                && $item_option['price']
-            ){
-                if(isset($item_option['published_option'])){
-                    $published = 1;
-                }else{
-                    $published = 0;
-                }
+        if($product_option){
+            foreach ($product_option as $key => $item_option){
+                if($item_option['name_option']
+                    && $item_option['style_id']
+                    && $item_option['color_id']
+                    && $item_option['size_id']
+                    && $item_option['quantity']
+                    && $item_option['price']
+                ){
+                    if(isset($item_option['published_option'])){
+                        $published = 1;
+                    }else{
+                        $published = 0;
+                    }
 
-                // lưu các option sản phẩm
-                $item_save = [
-                    "product_id" => $id,
-                    "name" => $item_option['name_option'],
-                    "alias" => str_slug($item_option['name_option'], '-'),
-                    "style_id" => $item_option['style_id'],
-                    "color_id" => $item_option['color_id'],
-                    "size_id" => $item_option['size_id'],
-                    "quantity" => $item_option['quantity'],
-                    "price" => $item_option['price'],
-                    "published" => $published
-                ];
-                $id_option = $modelProduct->save_option($item_save);
+                    // lưu các option sản phẩm
+                    $item_save = [
+                        "product_id" => $id,
+                        "name" => $item_option['name_option'],
+                        "alias" => str_slug($item_option['name_option'], '-'),
+                        "style_id" => $item_option['style_id'],
+                        "color_id" => $item_option['color_id'],
+                        "size_id" => $item_option['size_id'],
+                        "quantity" => $item_option['quantity'],
+                        "price" => $item_option['price'],
+                        "published" => $published
+                    ];
+                    $id_option = $modelProduct->save_option($item_save);
 
-                // lưu ảnh vào bảng ảnh
-                if($id_option && $item_option['UploadFiles']){
-                    foreach ($item_option['UploadFiles'] as $k=> $uf){
-                        $file_path = $this->fileUploadController->uploadImage($uf, $this->path_base);
-                        $this->fileUploadController->uploadImageFit($uf, $this->path_base, $this->array_size);
+                    // lưu ảnh vào bảng ảnh
+                    if($id_option && $item_option['UploadFiles']){
+                        foreach ($item_option['UploadFiles'] as $k=> $uf){
+                            $file_path = $this->fileUploadController->uploadImage($uf, $this->path_base);
+                            $this->fileUploadController->uploadImageFit($uf, $this->path_base, $this->array_size);
 
-                        $item_image_save = [
-                            'product_id' => $id,
-                            'product_option_id' => $id_option,
-                            'image' => $file_path,
-                            'type' => $uf->extension(),
-                            'size' => $uf->getSize()
-                        ];
+                            $item_image_save = [
+                                'product_id' => $id,
+                                'product_option_id' => $id_option,
+                                'image' => $file_path,
+                                'type' => $uf->extension(),
+                                'size' => $uf->getSize()
+                            ];
 
-                        $modelProduct->save_image_option($item_image_save);
+                            $modelProduct->save_image_option($item_image_save);
 
+                        }
                     }
                 }
-            }
-        };
+            };
+        }
 
 
 
@@ -348,7 +355,7 @@ class ProductsController extends Controller
 
     // delete item option
     public function deleteOption(Request $request){
-        $delete_option = $this->productModel->deleteItemOption($request, $this->array_size);
+        $delete_option = $this->productModel->deleteItemOptionByIdOption($request, $this->array_size);
         return $delete_option;
     }
 

@@ -39,25 +39,16 @@
                     <div class="tools"></div>
                 </div>
                 <div class="portlet-body">
-                    <table class="table table-striped table-bordered table-hover" id="sample_1">
+                    <table class="table table-striped table-bordered table-hover table-style-default" id="sample_1">
                         <thead>
                             <tr>
                                 <th class="width-stt">STT</th>
                                 <th>Tên danh mục</th>
                                 <th>Danh mục cha</th>
                                 <th>Level</th>
-                                <th>Trạng thái</th>
+                                <th width="40" class="text-center">Trạng thái</th>
                             </tr>
                         </thead>
-                        <tfoot>
-                            <tr>
-                                <th class="width-stt">STT</th>
-                                <th>Tên danh mục</th>
-                                <th>Danh mục cha</th>
-                                <th>Level</th>
-                                <th>Trạng thái</th>
-                            </tr>
-                        </tfoot>
                         <tbody>
                             @foreach($listCategoryProducts as $key=>$item)
                                 <tr>
@@ -65,7 +56,13 @@
                                     <td><a href="{{ route('admin_edit_products_category' , $item->id) }}">{{ $item->name }}</a></td>
                                     <td>{{ $item->alias }}</td>
                                     <td>{{ $item->level }}</td>
-                                    <td>{{ $item->published }}</td>
+                                    <td class="text-center">
+                                        @if($item->published == 1)
+                                            <span class="label label-sm label-success"> Hoạt động </span>
+                                        @else
+                                            <span class="label label-sm label-danger"> Khóa </span>
+                                        @endif
+                                    </td>
                                 </tr>
                             @endforeach
                         </tbody>

@@ -39,7 +39,7 @@
                     <div class="tools"></div>
                 </div>
                 <div class="portlet-body">
-                    <table class="table table-striped table-bordered table-hover" id="sample_1">
+                    <table class="table table-striped table-bordered table-hover table-style-default" id="sample_1">
                         <thead>
                             <tr>
                                 <th class="width-stt">STT</th>
@@ -47,19 +47,9 @@
                                 <th>Danh mục cha</th>
                                 <th>Level</th>
                                 <th>Nhóm menu</th>
-                                <th>Trạng thái</th>
+                                <th class="text-center" width="40">Trạng thái</th>
                             </tr>
                         </thead>
-                        <tfoot>
-                            <tr>
-                                <th class="width-stt">STT</th>
-                                <th>Tên danh mục</th>
-                                <th>Danh mục cha</th>
-                                <th>Level</th>
-                                <th>Nhóm menu</th>
-                                <th>Trạng thái</th>
-                            </tr>
-                        </tfoot>
                         <tbody>
                             @foreach($listMenu as $key=>$item)
                                 <tr>
@@ -76,7 +66,13 @@
                                     </td>
                                     <td>{{ $item->level }}</td>
                                     <td>{{$item->group_id == 1 ? 'Menu Top' : ""}} </td>
-                                    <td>{{ $item->published }}</td>
+                                    <td class="text-center">
+                                        @if($item->published == 1)
+                                            <span class="label label-sm label-success"> Hoạt động </span>
+                                        @else
+                                            <span class="label label-sm label-danger"> Khóa </span>
+                                        @endif
+                                    </td>
                                 </tr>
                             @endforeach
                         </tbody>

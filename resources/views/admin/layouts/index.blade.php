@@ -31,6 +31,8 @@
     <link href="admin_asset/global/css/plugins.min.css" rel="stylesheet" type="text/css" />
     <!-- END THEME GLOBAL STYLES -->
 
+    {{--UI sweet alert--}}
+    <link href="admin_asset/global/plugins/bootstrap-sweetalert/sweetalert.css" rel="stylesheet" type="text/css" />
 
     {{--icheck--}}
     <link href="admin_asset/global/plugins/icheck/skins/all.css" rel="stylesheet" type="text/css" />
@@ -715,6 +717,11 @@
     {{--icheck--}}
     <script src="admin_asset/global/plugins/icheck/icheck.min.js" type="text/javascript"></script>
     <script src="admin_asset/pages/scripts/form-icheck.min.js" type="text/javascript"></script>
+
+
+    {{-- js sweet alert --}}
+    <script src="admin_asset/global/plugins/bootstrap-sweetalert/sweetalert.min.js" type="text/javascript"></script>
+    <script src="admin_asset/pages/scripts/ui-sweetalert.min.js" type="text/javascript"></script>
 
 
     {{--CKeditor 5 document--}}
