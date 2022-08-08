@@ -2,25 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="866b1147-57aa-46bf-896a-cb54ff7b0fd2" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/DevLaptop.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/DevLaptop.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/banners/banners/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/banners/banners/edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/banners/banners/list.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/banners/banners/list.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/banners/categories/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/banners/categories/edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/brands/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/brands/edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/brands/list.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/brands/list.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/menu/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/menu/edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/news/categories/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/news/categories/edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/news/news/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/news/news/edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/products/categories/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/products/categories/edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/products/products/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/products/products/edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/products/products/list.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/products/products/list.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/client/blogs/category_list.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/client/blogs/category_list.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/client/blogs/detail.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/client/blogs/detail.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/client/blogs/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/client/blogs/home.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/client/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/client/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/client/layouts/menu_top.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/client/layouts/menu_top.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/LoginController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/LoginController.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -335,7 +317,7 @@
       <workItem from="1646618389500" duration="20521000" />
       <workItem from="1646705144316" duration="5687000" />
       <workItem from="1647055633586" duration="2091000" />
-      <workItem from="1659970894742" duration="3746000" />
+      <workItem from="1659970894742" duration="4092000" />
     </task>
     <servers />
   </component>
@@ -343,10 +325,10 @@
     <option name="version" value="2" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="667" y="255" width="585" height="582" key="find.popup" timestamp="1659974522437">
+    <state x="667" y="255" width="585" height="582" key="find.popup" timestamp="1659975435926">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="667" y="255" width="585" height="582" key="find.popup/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1659974522437" />
+    <state x="667" y="255" width="585" height="582" key="find.popup/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1659975435926" />
   </component>
   <component name="masterDetails">
     <states>
