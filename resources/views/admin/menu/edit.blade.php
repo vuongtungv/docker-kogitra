@@ -114,7 +114,7 @@
                                 <div class="fileinput fileinput-new" data-provides="fileinput">
                                     <div class="fileinput-preview thumbnail" data-trigger="fileinput"
                                          style="width: 70px; height: 70px;">
-                                        <img src="{{ $detail->icon ? '/storage/app/public/'.$detail->icon : ''}}" alt="">
+                                        <img src="{{ $detail->icon ? 'storage/'.$detail->icon : ''}}" alt="">
                                     </div>
 
                                     <div>
@@ -143,7 +143,7 @@
                                 <div class="fileinput fileinput-new" data-provides="fileinput">
                                     <div class="fileinput-preview thumbnail" data-trigger="fileinput"
                                          style="width: 200px; height: 150px;">
-                                        <img src="{{ $detail->image ? '/storage/app/public/'.$detail->image : ''}}" alt="">
+                                        <img src="{{ $detail->image ? 'storage/'.$detail->image : ''}}" alt="">
                                     </div>
 
                                     <div>

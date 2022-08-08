@@ -95,7 +95,7 @@
                             <div class="fileinput-preview thumbnail" data-trigger="fileinput"
                                  style="width: 200px; height: 150px;">
                                 {{--                                {{ dd(url('storage/app/public/images/'.$detail->image)) }}--}}
-                                <img src="{{ $detail->image ? '/storage/app/public/'.$detail->image : ''}}" alt="">
+                                <img src="{{ $detail->image ? 'storage/'.$detail->image : ''}}" alt="">
                             </div>
                             <div>
                             <span class="btn red btn-outline btn-file">

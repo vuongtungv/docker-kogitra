@@ -28,7 +28,7 @@
                             <div class="post-inner">
                                 <div class="post-thumb">
                                     <a href="{{ route('client_detail_news', ['id' => $item->id, 'alias' => $item->alias]) }}">
-                                        <img src="{{'/storage/app/public/'.str_replace('/original/','/small/', $item->image)}}"
+                                        <img src="{{'storage/'.str_replace('/original/','/small/', $item->image)}}"
                                              class="img-responsive attachment-370x330 size-370x330" alt="img" width="370"
                                              height="330"> </a>
                                 </div>
@@ -42,7 +42,7 @@
                                         </div>
                                     </div>
                                     <div class="post-info equal-elem">
-                                        <h2 class="post-title"><a href="{{'/storage/app/public/'.str_replace('/original/','/small/', $item->image)}}">{{$item->name}}</a></h2>
+                                        <h2 class="post-title"><a href="{{'storage/'.str_replace('/original/','/small/', $item->image)}}">{{$item->name}}</a></h2>
                                         {{$item->brief}}
                                     </div>
                                 </div>

@@ -4,7 +4,7 @@
 @section('client_content_2')
 
     <div class="banner-wrapper has_background">
-        <img src="{{'/storage/app/public/'.$detailCategory->image}}"
+        <img src="{{'storage/'.$detailCategory->image}}"
              class="img-responsive attachment-1920x447 size-1920x447" alt="img">
         <div class="banner-wrapper-inner container">
             <h1 class="page-title">Blogs</h1>
@@ -28,7 +28,7 @@
                             <article class="post-item post-standard post-{{$item->id}} post type-post status-publish format-standard has-post-thumbnail hentry category-light category-table category-life-style tag-light tag-life-style">
                             <div class="post-thumb">
                                 <a href="{{ route('client_detail_news', ['id' => $item->id, 'alias' => $item->alias]) }}">
-                                    <img src="{{'/storage/app/public/'.str_replace('/original/','/large/', $item->image)}}" class="img-responsive attachment-1170x768 size-1170x768" alt="img" width="1170"
+                                    <img src="{{'storage/'.str_replace('/original/','/large/', $item->image)}}" class="img-responsive attachment-1170x768 size-1170x768" alt="img" width="1170"
                                         height="768">
                                 </a>
                             </div>

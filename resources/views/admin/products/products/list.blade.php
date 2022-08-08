@@ -66,7 +66,7 @@
                             @foreach($listProducts  as $key=>$item)
                                 <tr data-id="{{$item->id}}">
                                     <td class="text-center">{{ $key+1 }}</td>
-                                    <td class="text-center td-image"><img src="{{ $item->image ? '/storage/app/public/'. str_replace('/original/', '/tiny/', $item->image) : ''}}" alt=""></td>
+                                    <td class="text-center td-image"><img src="{{ $item->image ? 'storage/'. str_replace('/original/', '/tiny/', $item->image) : ''}}" alt=""></td>
                                     <td><a href="{{ route('admin_edit_products_products' , $item->id) }}">{{ $item->name }}</a></td>
                                     <td>{{ $item->category_name }}</td>
                                     <td class="text-center">

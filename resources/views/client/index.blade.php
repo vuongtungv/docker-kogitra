@@ -10,7 +10,7 @@
                  data-responsive="[{&quot;breakpoint&quot;:480,&quot;settings&quot;:{&quot;slidesToShow&quot;:1,&quot;slidesMargin&quot;:&quot;0&quot;}},{&quot;breakpoint&quot;:768,&quot;settings&quot;:{&quot;slidesToShow&quot;:1,&quot;slidesMargin&quot;:&quot;0&quot;}},{&quot;breakpoint&quot;:992,&quot;settings&quot;:{&quot;slidesToShow&quot;:1,&quot;slidesMargin&quot;:&quot;0&quot;}},{&quot;breakpoint&quot;:1200,&quot;settings&quot;:{&quot;slidesToShow&quot;:1,&quot;slidesMargin&quot;:&quot;0&quot;}},{&quot;breakpoint&quot;:1500,&quot;settings&quot;:{&quot;slidesToShow&quot;:1,&quot;slidesMargin&quot;:&quot;0&quot;}}]">
                 @foreach($listBanners as $key=>$item)
                     <div class="slide-wrap">
-                        <img src="{{'/storage/app/public/'.$item->image}}" alt="image">
+                        <img src="{{'storage/'.$item->image}}" alt="image">
                         <div class="slide-info">
                             <div class="container">
                                 <div class="slide-inner">
@@ -32,7 +32,7 @@
                         <div class="kodory-banner style-01 left-top new">
                             <div class="banner-inner">
                                 <figure class="banner-thumb">
-                                    <img src="{{str_replace('/original/', '/new_collection/', '/storage/app/public/'.$getBannerNewCollection[0]->image)}}"
+                                    <img src="{{str_replace('/original/', '/new_collection/', 'storage/'.$getBannerNewCollection[0]->image)}}"
                                          class="attachment-full size-full" alt="img">
                                 </figure>
                                 <div class="banner-info ">
@@ -51,7 +51,7 @@
                         <div class="kodory-banner style-01 left-center">
                             <div class="banner-inner">
                                 <figure class="banner-thumb">
-                                    <img src="{{str_replace('/original/', '/with_style/', '/storage/app/public/'.$getBannerWithStyle[0]->image)}}"
+                                    <img src="{{str_replace('/original/', '/with_style/', 'storage/'.$getBannerWithStyle[0]->image)}}"
                                          class="attachment-full size-full" alt="img">
                                 </figure>
                                 <div class="banner-info ">
@@ -71,7 +71,7 @@
                                     <div class="kodory-banner style-01 left-top  kodory_custom_5d67efefec0b8 ">
                                         <div class="banner-inner">
                                             <figure class="banner-thumb">
-                                                <img src="{{str_replace('/original/', '/set_style/', '/storage/app/public/'.$item->image)}}"
+                                                <img src="{{str_replace('/original/', '/set_style/', 'storage/'.$item->image)}}"
                                                      class="attachment-full size-full" alt="img"></figure>
                                             <div class="banner-info ">
                                                 <div class="banner-content">
@@ -1273,7 +1273,7 @@
                 @foreach($oneBanner as $item)
                     <div class="banner-inner">
                         <figure class="banner-thumb">
-                            <img src="{{'/storage/app/public/'.$item->image}}"
+                            <img src="{{'storage/'.$item->image}}"
                                  class="attachment-full size-full" alt="img"></figure>
                         <div class="banner-info container">
                             <div class="banner-content">
@@ -1870,7 +1870,7 @@
                                 <div class="kodory-banner style-12 left-center">
                                     <div class="banner-inner">
                                         <figure class="banner-thumb">
-                                            <img src="{{ '/storage/app/public/'.str_replace('/original/','/small/',$item->image )}}"
+                                            <img src="{{ 'storage/'.str_replace('/original/','/small/',$item->image )}}"
                                                  class="attachment-full size-full" alt="img"></figure>
                                         <div class="banner-info ">
                                             <div class="banner-content">
@@ -1904,11 +1904,11 @@
                             <div class="dreaming_single_image dreaming_content_element az_align_center">
                                 <figure class="dreaming_wrapper az_figure">
                                     <div class="az_single_image-wrapper   az_box_border_grey effect bounce-in ">
-                                        <img src="{{ '/storage/app/public/'.str_replace('/original/','/small/',$item->image )}}"
+                                        <img src="{{ 'storage/'.str_replace('/original/','/small/',$item->image )}}"
                                             class="az_single_image-img attachment-full" alt="img" width="200" height="100">
                                     </div>
                                 </figure>
-                            </div>    
+                            </div>
                         @endforeach
                     </div>
                 </div>
@@ -1937,7 +1937,7 @@
                                 <div class="post-inner blog-grid">
                                     <div class="post-thumb">
                                         <a href="{{ route('client_detail_news', ['id' => $item->id, 'alias' => $item->alias]) }}" tabindex="0">
-                                            <img src="{{ '/storage/app/public/'.str_replace('/original/','/small/',$item->image )}}"
+                                            <img src="{{ 'storage/'.str_replace('/original/','/small/',$item->image )}}"
                                                  class="img-responsive attachment-370x330 size-370x330" alt="img"
                                                  width="370" height="330"> </a>
                                     </div>

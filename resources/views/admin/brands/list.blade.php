@@ -54,7 +54,7 @@
                                 <td class="text-center">{{ $key+1 }}</td>
                                 <td class="td-image">
                                     @if($item->image)
-                                        <img src="{{'/storage/app/public/'.$item->image}}" alt="">
+                                        <img src="{{'storage/'.$item->image}}" alt="">
                                     @endif
                                 </td>
                                 <td><a href="{{ route('admin_edit_brands' , $item->id) }}">{{ $item->name }}</a></td>

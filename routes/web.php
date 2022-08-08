@@ -33,6 +33,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::post('/admin/login', 'Admin\LoginController@postLogin')->name('post_admin_login');
 Route::get('/admin/login', [ 'uses' => 'Admin\LoginController@getLogin'])->name('admin_login');
+Route::get('/admin', [ 'uses' => 'Admin\LoginController@getLogin'])->name('admin_login');
 
 Route::group(['middleware' => 'checkAdminLogin', '/admin', 'prefix'=> 'admin'],function () {
     Route::group(['middleware' => 'checkAdminLogin', 'prefix' => '/', 'namespace' => 'admin'], function () {
@@ -140,6 +141,7 @@ Route::group(['middleware' => 'checkAdminLogin', '/admin', 'prefix'=> 'admin'],f
 
 // ROUTE CLIENT
 
+Route::get('/', ['uses' => 'Client\HomeController@index'])->name('client_home');
 Route::get('/home.html', ['uses' => 'Client\HomeController@index'])->name('client_home');
 
 

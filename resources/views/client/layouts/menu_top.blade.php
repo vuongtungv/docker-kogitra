@@ -1,5 +1,3 @@
-{{ $client_url_base = URL::to('/') }}
-
 <header id="header" class="header style-02 header-dark header-sticky header-transparent">
     <div class="header-wrap-stick">
         <div class="header-position">
@@ -27,7 +25,7 @@
                                     @if($item->level == 0)
                                         <li id="menu-item-{{$item->id}}"
                                             class="menu-item menu-item-type-post_type menu-item-object-megamenu menu-item-{{$item->id}} parent parent-megamenu item-megamenu menu-item-has-children">
-                                            <a class="kodory-menu-item-title" title="{{$item->name}}" href="{{$client_url_base.$item->link}}" target="{{$item->target}}">{{$item->name}}</a>
+                                            <a class="kodory-menu-item-title" title="{{$item->name}}" href="{{URL::to('/').$item->link}}" target="{{$item->target}}">{{$item->name}}</a>
                                             @if($item->child)
                                                 <span class="toggle-submenu"></span>
                                                 <div class="submenu megamenu megamenu-{{strtolower($item->alias)}}">
@@ -40,7 +38,7 @@
                                                                     <ul class="listitem-list">
                                                                         @foreach($item->child as $cl)
                                                                         <li>
-                                                                            <a href="{{ str_replace('{$id}', $cl->id, $client_url_base.$cl->link )}}" target="{{$cl->target}}">{{$cl->name}}</a>
+                                                                            <a href="{{ str_replace('{$id}', $cl->id, URL::to('/').$cl->link )}}" target="{{$cl->target}}">{{$cl->name}}</a>
                                                                         </li>
                                                                         @endforeach
                                                                     </ul>
