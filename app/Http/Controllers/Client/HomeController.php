@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Client;
 
 use App\Http\Controllers\Client\brands\BrandsController;
 use App\Http\Controllers\Client\news\NewsController;
+use App\Http\Controllers\Client\products\ProductsController;
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\Client\banners\BannersController;
 
@@ -24,6 +25,8 @@ class HomeController extends Controller
         $this->brandsController = new BrandsController();
 
         $this->menus = new MenusController();
+
+        $this->productsController = new ProductsController();
     }
 
 
@@ -48,6 +51,10 @@ class HomeController extends Controller
         $getBannerSetStyle = $this->bannersController->getBanners(6);
 
 
+        // product
+        $newArrival = $this->productsController->getNewArrival();
+        $featured = $this->productsController->getFeatured();
+
         $compact = [
             'listBanners',
             'oneBanner',
@@ -57,7 +64,9 @@ class HomeController extends Controller
             'listMenus',
             'getBannerNewCollection',
             'getBannerWithStyle',
-            'getBannerSetStyle'
+            'getBannerSetStyle',
+            'newArrival',
+            'featured',
         ];
 
         return view('client.index', compact($compact));

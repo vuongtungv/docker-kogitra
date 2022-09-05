@@ -132,9 +132,6 @@ Route::group(['middleware' => 'checkAdminLogin', '/admin', 'prefix'=> 'admin'],f
     Route::post('/product/product/edit/{id}', [ 'uses' => 'Admin\products\ProductsController@update'])->name('post_admin_edit_products_products');
     Route::post('/product/product/delete', [ 'uses' => 'Admin\products\ProductsController@destroy'])->name('admin_delete_products_products');
 
-
-
-
 });
 
 
@@ -152,6 +149,9 @@ Route::get('/blogs/home/{page}.html', [ 'uses' => 'Client\news\NewsController@in
 // category news
 Route::get('/blogs/category-{id}/{alias}.html', [ 'uses' => 'Client\news\NewsController@listByCategory'])->name('client_news_list_by_category')->where(['id' => '[0-9]+']);
 Route::get('/blogs/category-{id}/{alias}/{page?}.html', [ 'uses' => 'Client\news\NewsController@listByCategoryWithPage'])->name('client_news_list_by_category_with_page')->where(['id' => '[0-9]+', 'page'=> '[0-9]+']);
-
-
 Route::get('/blogs/{id}/{alias}.html', [ 'uses' => 'Client\news\NewsController@detail'])->name('client_detail_news')->where(['id' => '[0-9]+']);
+
+
+
+// product
+Route::get('/product/{id}/{alias}.html', [ 'uses' => 'Client\products\ProductsController@detail'])->name('client_detail_product')->where(['id' => '[0-9]+']);

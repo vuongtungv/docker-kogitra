@@ -1,8 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="866b1147-57aa-46bf-896a-cb54ff7b0fd2" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/LoginController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/LoginController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/client/products/detail.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Client/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Client/HomeController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/layouts/footer.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/layouts/footer.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/products/products/list.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/products/products/list.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/client/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/client/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -143,7 +167,7 @@
   <component name="PropertiesComponent">
     <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file://C:/xampp/htdocs/DevLaptop/.env" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../project-pets-store" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/client/products" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -156,19 +180,19 @@
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\DevLaptop\resources\views\client\products" />
+      <recent name="C:\xampp\htdocs\DevLaptop\public\admin_asset\js_admin" />
+      <recent name="C:\xampp\htdocs\DevLaptop\public\admin_asset\css_admin" />
+      <recent name="C:\xampp\htdocs\DevLaptop\resources\views\admin\products\products" />
+      <recent name="C:\xampp\htdocs\DevLaptop\public\admin_asset\global\plugins\select2\css" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\xampp\htdocs\DevLaptop\resources\views\client" />
       <recent name="C:\xampp\htdocs\DevLaptop\resources\views\client\layouts" />
       <recent name="C:\xampp\htdocs\DevLaptop\app\Models\admin\news" />
       <recent name="C:\xampp\htdocs\DevLaptop\app\Models\admin\menus" />
       <recent name="C:\xampp\htdocs\DevLaptop\app\Http\Requests\Admin" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\xampp\htdocs\DevLaptop\public\admin_asset\js_admin" />
-      <recent name="C:\xampp\htdocs\DevLaptop\public\admin_asset\css_admin" />
-      <recent name="C:\xampp\htdocs\DevLaptop\resources\views\admin\products\products" />
-      <recent name="C:\xampp\htdocs\DevLaptop\public\admin_asset\global\plugins\select2\css" />
-      <recent name="C:\xampp\htdocs\DevLaptop\resources\views\admin\news\news" />
     </key>
   </component>
   <component name="SvnConfiguration">
@@ -318,17 +342,47 @@
       <workItem from="1646705144316" duration="5687000" />
       <workItem from="1647055633586" duration="2091000" />
       <workItem from="1659970894742" duration="4092000" />
+      <workItem from="1660573656227" duration="634000" />
+      <workItem from="1660575555640" duration="2454000" />
+      <workItem from="1662255296851" duration="8307000" />
+      <workItem from="1662388332667" duration="4036000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="2" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
   <component name="WindowStateProjectService">
-    <state x="667" y="255" width="585" height="582" key="find.popup" timestamp="1659975435926">
+    <state x="-1230" y="295" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1662262986577">
+      <screen x="-1920" y="0" width="1920" height="1040" />
+    </state>
+    <state x="-1230" y="295" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/-1920.0.1920.1040/0.0.1920.1040@-1920.0.1920.1040" timestamp="1662262986577" />
+    <state x="461" y="165" key="SettingsEditor" timestamp="1662260002600">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="667" y="255" width="585" height="582" key="find.popup/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1659975435926" />
+    <state x="461" y="165" key="SettingsEditor/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1662260002600" />
+    <state x="667" y="255" width="585" height="582" key="find.popup" timestamp="1662262210259">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="667" y="255" width="585" height="582" key="find.popup/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1662262210259" />
+    <state x="667" y="255" width="585" height="582" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1662257904730" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1662262217991">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1662262217991" />
+    <state x="623" y="225" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1662257977177" />
   </component>
   <component name="masterDetails">
     <states>

@@ -59,7 +59,7 @@
                                 <th>Tên sản phẩm</th>
                                 <th>Danh mục</th>
                                 <th width="40">Trạng thái</th>
-                                <th width="175"></th>
+                                <th width="100"></th>
                             </tr>
                         </thead>
                         <tbody>
@@ -78,9 +78,9 @@
                                     </td>
                                     <td>
                                         <a href="{{ route('admin_edit_products_products' , $item->id) }}" class="btn btn-outline btn-circle btn-sm purple">
-                                            <i class="fa fa-edit"></i> Edit </a>
+                                            <i class="fa fa-edit"></i> </a>
                                         <a data-id="{{$item->id}}" data-name="{{$item->name}}" href="{{ route('admin_delete_products_products' , $item->id) }}" class="btn btn-outline btn-circle dark btn-sm black show_confirm">
-                                            <i class="fa fa-trash-o"></i> Delete </a>
+                                            <i class="fa fa-trash-o"></i> </a>
                                     </td>
                                 </tr>
                             @endforeach
