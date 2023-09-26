@@ -168,398 +168,50 @@
                         <div class="tab-panel " id="1547652726354-2b0cdba5-80e9-5d80aefaa70e2">
                             <div class="kodory-products style-01   kodory_custom_5d67efefedff9 ">
                                 <div class="response-product product-list-grid row auto-clear equal-container better-height ">
-                                    <div class="product-item top-rated style-01 rows-space-30 col-bg-3 col-xl-3 col-lg-4 col-md-4 col-sm-6 col-ts-6 post-26 product type-product status-publish has-post-thumbnail product_cat-light product_cat-chair product_cat-sofas product_tag-light product_tag-hat last instock featured shipping-taxable product-type-external">
-                                        <div class="product-inner tooltip-left">
-                                            <div class="product-thumb">
-                                                <a class="thumb-link"
-                                                   href="single-product.html">
-                                                    <img class="img-responsive"
-                                                         src="client_asset/images/apro141-1-270x350.jpg"
-                                                         alt="Red Car" width="270" height="350">
-                                                </a>
-                                                <div class="flash">
-                                                    <span class="onnew"><span class="text">New</span></span></div>
-                                                <div class="group-button">
-                                                    <div class="yith-wcwl-add-to-wishlist">
-                                                        <div class="yith-wcwl-add-button show">
-                                                            <a href="wishlist.html" class="add_to_wishlist">Add to Wishlist</a>
+                                    @foreach($featured as $item)
+                                        <div class="product-item top-rated style-01 rows-space-30 col-bg-3 col-xl-3 col-lg-4 col-md-4 col-sm-6 col-ts-6 post-28 product type-product status-publish has-post-thumbnail product_cat-light product_cat-chair product_cat-sofas product_tag-light product_tag-sock first instock sale featured shipping-taxable purchasable product-type-simple">
+                                            <div class="product-inner tooltip-left">
+                                                <div class="product-thumb">
+                                                    <a class="thumb-link"
+                                                       href="{{ route('client_detail_product', ['id' => $item->id, 'alias' => $item->alias]) }}">
+                                                        <img class="img-responsive"
+                                                             src="{{str_replace('/original/', '/small/', 'storage/'.$item->image)}}"
+                                                             alt="Blue Shoes" width="270" height="350">
+                                                    </a>
+                                                    <div class="flash">
+                                                        <span class="onsale"><span class="number">-14%</span></span>
+                                                        <span class="onnew"><span class="text">New</span></span></div>
+                                                    <div class="group-button">
+                                                        <div class="yith-wcwl-add-to-wishlist">
+                                                            <div class="yith-wcwl-add-button show">
+                                                                <a href="wishlist.html" class="add_to_wishlist">Add to Wishlist</a>
+                                                            </div>
+                                                        </div>
+                                                        <div class="kodory product compare-button">
+                                                            <a href="compare.html" class="compare button">Compare</a>
+                                                        </div>
+                                                        <a href="#" class="button yith-wcqv-button">Quick View</a>
+                                                        <div class="add-to-cart">
+                                                            <a href="cart.html"
+                                                               class="button product_type_simple add_to_cart_button ajax_add_to_cart">Add
+                                                                to cart</a>
                                                         </div>
                                                     </div>
-                                                    <div class="kodory product compare-button">
-                                                        <a href="compare.html" class="compare button">Compare</a>
-                                                    </div>
-                                                    <a href="#" class="button yith-wcqv-button">Quick View</a>
-                                                    <div class="add-to-cart">
-                                                        <a href="cart.html"
-                                                           class="button product_type_simple add_to_cart_button ajax_add_to_cart">Buy
-                                                            it on Amazon</a>
-                                                    </div>
                                                 </div>
-                                            </div>
-                                            <div class="product-info equal-elem">
-                                                <h3 class="product-name product_title">
-                                                    <a href="single-product.html">Dining Teddy Bear</a>
-                                                </h3>
-                                                <div class="rating-wapper ">
-                                                    <div class="star-rating"><span style="width:100%">Rated <strong
-                                                                class="rating">5.00</strong> out of 5</span></div>
-                                                    <span class="review">(1)</span></div>
-                                                <span class="price"><span class="kodory-Price-amount amount"><span
-                                                            class="kodory-Price-currencySymbol">$</span>207.00</span></span>
+                                                <div class="product-info equal-elem">
+                                                    <h3 class="product-name product_title">
+                                                        <a href="{{ route('client_detail_product', ['id' => $item->id, 'alias' => $item->alias]) }}">{{$item->name}}</a>
+                                                    </h3>
+                                                    <span class="price">
+                                                        <span class="kodory-Price-amount amount">
+                                                            {{$item->price_range_1}}</span><span class="kodory-Price-currencySymbol"></span> –
+                                                        <span class="kodory-Price-amount amount">
+                                                            {{$item->price_range_2}}</span><span class="kodory-Price-currencySymbol">đ</span>
+                                                    </span>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div class="product-item top-rated style-01 rows-space-30 col-bg-3 col-xl-3 col-lg-4 col-md-4 col-sm-6 col-ts-6 post-28 product type-product status-publish has-post-thumbnail product_cat-light product_cat-chair product_cat-sofas product_tag-light product_tag-sock first instock sale featured shipping-taxable purchasable product-type-simple">
-                                        <div class="product-inner tooltip-left">
-                                            <div class="product-thumb">
-                                                <a class="thumb-link"
-                                                   href="single-product.html">
-                                                    <img class="img-responsive"
-                                                         src="client_asset/images/apro1211-2-270x350.jpg"
-                                                         alt="Blue Shoes" width="270" height="350">
-                                                </a>
-                                                <div class="flash">
-                                                    <span class="onsale"><span class="number">-14%</span></span>
-                                                    <span class="onnew"><span class="text">New</span></span></div>
-                                                <div class="group-button">
-                                                    <div class="yith-wcwl-add-to-wishlist">
-                                                        <div class="yith-wcwl-add-button show">
-                                                            <a href="wishlist.html" class="add_to_wishlist">Add to Wishlist</a>
-                                                        </div>
-                                                    </div>
-                                                    <div class="kodory product compare-button">
-                                                        <a href="compare.html" class="compare button">Compare</a>
-                                                    </div>
-                                                    <a href="#" class="button yith-wcqv-button">Quick View</a>
-                                                    <div class="add-to-cart">
-                                                        <a href="cart.html"
-                                                           class="button product_type_simple add_to_cart_button ajax_add_to_cart">Add
-                                                            to cart</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="product-info equal-elem">
-                                                <h3 class="product-name product_title">
-                                                    <a href="single-product.html">Blue Shoes</a>
-                                                </h3>
-                                                <div class="rating-wapper ">
-                                                    <div class="star-rating"><span style="width:100%">Rated <strong
-                                                                class="rating">5.00</strong> out of 5</span></div>
-                                                    <span class="review">(1)</span></div>
-                                                <span class="price"><del><span class="kodory-Price-amount amount"><span
-                                                                class="kodory-Price-currencySymbol">$</span>138.00</span></del> <ins><span
-                                                            class="kodory-Price-amount amount"><span
-                                                                class="kodory-Price-currencySymbol">$</span>119.00</span></ins></span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="product-item top-rated style-01 rows-space-30 col-bg-3 col-xl-3 col-lg-4 col-md-4 col-sm-6 col-ts-6 post-20 product type-product status-publish has-post-thumbnail product_cat-light product_cat-new-arrivals product_cat-specials product_tag-table product_tag-hat product_tag-sock  instock sale featured shipping-taxable purchasable product-type-simple">
-                                        <div class="product-inner tooltip-left">
-                                            <div class="product-thumb">
-                                                <a class="thumb-link"
-                                                   href="single-product.html">
-                                                    <img class="img-responsive"
-                                                         src="client_asset/images/apro201-1-270x350.jpg"
-                                                         alt="Red Car" width="270" height="350">
-                                                </a>
-                                                <div class="flash">
-                                                    <span class="onsale"><span class="number">-7%</span></span>
-                                                    <span class="onnew"><span class="text">New</span></span></div>
-                                                <div class="group-button">
-                                                    <div class="yith-wcwl-add-to-wishlist">
-                                                        <div class="yith-wcwl-add-button show">
-                                                            <a href="wishlist.html" class="add_to_wishlist">Add to Wishlist</a>
-                                                        </div>
-                                                    </div>
-                                                    <div class="kodory product compare-button">
-                                                        <a href="compare.html" class="compare button">Compare</a>
-                                                    </div>
-                                                    <a href="#" class="button yith-wcqv-button">Quick View</a>
-                                                    <div class="add-to-cart">
-                                                        <a href="cart.html"
-                                                           class="button product_type_simple add_to_cart_button ajax_add_to_cart">Add
-                                                            to cart</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="product-info equal-elem">
-                                                <h3 class="product-name product_title">
-                                                    <a href="single-product.html">Red Car</a>
-                                                </h3>
-                                                <div class="rating-wapper nostar">
-                                                    <div class="star-rating"><span style="width:0%">Rated <strong
-                                                                class="rating">0</strong> out of 5</span></div>
-                                                    <span class="review">(0)</span></div>
-                                                <span class="price"><del><span class="kodory-Price-amount amount"><span
-                                                                class="kodory-Price-currencySymbol">$</span>150.00</span></del> <ins><span
-                                                            class="kodory-Price-amount amount"><span
-                                                                class="kodory-Price-currencySymbol">$</span>139.00</span></ins></span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="product-item top-rated style-01 rows-space-30 col-bg-3 col-xl-3 col-lg-4 col-md-4 col-sm-6 col-ts-6 post-33 product type-product status-publish has-post-thumbnail product_cat-chair product_cat-table product_cat-lamp product_tag-light product_tag-table product_tag-hat last instock shipping-taxable purchasable product-type-variable has-default-attributes">
-                                        <div class="product-inner tooltip-left">
-                                            <div class="product-thumb">
-                                                <a class="thumb-link"
-                                                   href="single-product.html">
-                                                    <img class="img-responsive"
-                                                         src="client_asset/images/apro83-1-270x350.jpg"
-                                                         alt="Glasses" width="270" height="350">
-                                                </a>
-                                                <div class="flash">
-                                                    <span class="onnew"><span class="text">New</span></span></div>
-                                                <form class="variations_form cart">
-                                                    <table class="variations">
-                                                        <tbody>
-                                                        <tr>
-                                                            <td class="value">
-                                                                <select title="box_style" data-attributetype="box_style"
-                                                                        data-id="pa_color"
-                                                                        class="attribute-select " name="attribute_pa_color"
-                                                                        data-attribute_name="attribute_pa_color"
-                                                                        data-show_option_none="yes">
-                                                                    <option data-type="" data-pa_color="" value="">Choose an
-                                                                        option
-                                                                    </option>
-                                                                    <option data-width="30" data-height="30"
-                                                                            data-type="color" data-pa_color="#000000"
-                                                                            value="black" class="attached enabled">Black
-                                                                    </option>
-                                                                    <option data-width="30" data-height="30"
-                                                                            data-type="color" data-pa_color="#b6b8ba"
-                                                                            value="red" class="attached enabled">Red
-                                                                    </option>
-                                                                </select>
-                                                                <div class="data-val attribute-pa_color"
-                                                                     data-attributetype="box_style">
-                                                                    <label>
-                                                                        <input type="radio" name="color">
-                                                                        <span class="change-value color"
-                                                                              style="background: #3155e2;"
-                                                                              data-value="blue">
-                                                                    </span>
-                                                                    </label>
-                                                                    <label>
-                                                                        <input type="radio" name="color">
-                                                                        <span class="change-value color"
-                                                                              style="background: #52b745;"
-                                                                              data-value="green">
-                                                                    </span>
-                                                                    </label>
-                                                                    <label>
-                                                                        <input type="radio" name="color">
-                                                                        <span class="change-value color"
-                                                                              style="background: #ffe59e;"
-                                                                              data-value="pink">
-                                                                    </span>
-                                                                    </label>
-                                                                </div>
-                                                                <a class="reset_variations" href="#"
-                                                                   style="visibility: hidden;">Clear</a></td>
-                                                        </tr>
-                                                        </tbody>
-                                                    </table>
-                                                </form>
-                                                <div class="group-button">
-                                                    <div class="yith-wcwl-add-to-wishlist">
-                                                        <div class="yith-wcwl-add-button show">
-                                                            <a href="wishlist.html" class="add_to_wishlist">Add to Wishlist</a>
-                                                        </div>
-                                                    </div>
-                                                    <div class="kodory product compare-button">
-                                                        <a href="compare.html" class="compare button">Compare</a>
-                                                    </div>
-                                                    <a href="#" class="button yith-wcqv-button">Quick View</a>
-                                                    <div class="add-to-cart">
-                                                        <a href="cart.html"
-                                                           class="button product_type_simple add_to_cart_button ajax_add_to_cart">Select
-                                                            options</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="product-info equal-elem">
-                                                <h3 class="product-name product_title">
-                                                    <a href="single-product.html">Star Shoes</a>
-                                                </h3>
-                                                <div class="rating-wapper nostar">
-                                                    <div class="star-rating"><span style="width:0%">Rated <strong
-                                                                class="rating">0</strong> out of 5</span></div>
-                                                    <span class="review">(0)</span></div>
-                                                <span class="price"><span class="kodory-Price-amount amount"><span
-                                                            class="kodory-Price-currencySymbol">$</span>56.00</span> – <span
-                                                        class="kodory-Price-amount amount"><span
-                                                            class="kodory-Price-currencySymbol">$</span>60.00</span></span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="product-item top-rated style-01 rows-space-30 col-bg-3 col-xl-3 col-lg-4 col-md-4 col-sm-6 col-ts-6 post-21 product type-product status-publish has-post-thumbnail product_cat-light product_cat-bed product_cat-lamp product_tag-light product_tag-sock first outofstock featured shipping-taxable purchasable product-type-simple">
-                                        <div class="product-inner tooltip-left">
-                                            <div class="product-thumb">
-                                                <a class="thumb-link"
-                                                   href="single-product.html">
-                                                    <img class="img-responsive"
-                                                         src="client_asset/images/apro191-1-270x350.jpg"
-                                                         alt="Baby Shirt" width="270" height="350">
-                                                </a>
-                                                <div class="flash">
-                                                    <span class="sold-out"><span>Sold out</span></span>
-                                                </div>
-                                                <div class="group-button">
-                                                    <div class="yith-wcwl-add-to-wishlist">
-                                                        <div class="yith-wcwl-add-button show">
-                                                            <a href="wishlist.html" class="add_to_wishlist">Add to Wishlist</a>
-                                                        </div>
-                                                    </div>
-                                                    <div class="kodory product compare-button">
-                                                        <a href="compare.html" class="compare button">Compare</a>
-                                                    </div>
-                                                    <a href="#" class="button yith-wcqv-button">Quick View</a>
-                                                    <div class="add-to-cart">
-                                                        <a href="cart.html"
-                                                           class="button product_type_simple add_to_cart_button ajax_add_to_cart">Read
-                                                            more</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="product-info equal-elem">
-                                                <h3 class="product-name product_title">
-                                                    <a href="single-product.html">Long
-                                                        Sleeve Shirt</a>
-                                                </h3>
-                                                <div class="rating-wapper nostar">
-                                                    <div class="star-rating"><span style="width:0%">Rated <strong
-                                                                class="rating">0</strong> out of 5</span></div>
-                                                    <span class="review">(0)</span></div>
-                                                <span class="price"><span class="kodory-Price-amount amount"><span
-                                                            class="kodory-Price-currencySymbol">$</span>35.00</span></span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="product-item top-rated style-01 rows-space-30 col-bg-3 col-xl-3 col-lg-4 col-md-4 col-sm-6 col-ts-6 post-34 product type-product status-publish has-post-thumbnail product_cat-light product_cat-new-arrivals product_tag-light product_tag-hat product_tag-sock  instock sale featured shipping-taxable product-type-grouped">
-                                        <div class="product-inner tooltip-left">
-                                            <div class="product-thumb">
-                                                <a class="thumb-link"
-                                                   href="single-product.html">
-                                                    <img class="img-responsive"
-                                                         src="client_asset/images/apro61-1-270x350.jpg"
-                                                         alt="Shark Shirt" width="270" height="350">
-                                                </a>
-                                                <div class="flash">
-                                                    <span class="onnew"><span class="text">New</span></span></div>
-                                                <div class="group-button">
-                                                    <div class="yith-wcwl-add-to-wishlist">
-                                                        <div class="yith-wcwl-add-button show">
-                                                            <a href="wishlist.html" class="add_to_wishlist">Add to Wishlist</a>
-                                                        </div>
-                                                    </div>
-                                                    <div class="kodory product compare-button">
-                                                        <a href="compare.html" class="compare button">Compare</a>
-                                                    </div>
-                                                    <a href="cart.html" class="button yith-wcqv-button">Quick View</a>
-                                                    <div class="add-to-cart">
-                                                        <a href="#"
-                                                           class="button product_type_simple add_to_cart_button ajax_add_to_cart">View
-                                                            products</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="product-info equal-elem">
-                                                <h3 class="product-name product_title">
-                                                    <a href="single-product.html">Shark Shirt</a>
-                                                </h3>
-                                                <div class="rating-wapper nostar">
-                                                    <div class="star-rating"><span style="width:0%">Rated <strong
-                                                                class="rating">0</strong> out of 5</span></div>
-                                                    <span class="review">(0)</span></div>
-                                                <span class="price"><span class="kodory-Price-amount amount"><span
-                                                            class="kodory-Price-currencySymbol">$</span>79.00</span> – <span
-                                                        class="kodory-Price-amount amount"><span
-                                                            class="kodory-Price-currencySymbol">$</span>139.00</span></span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="product-item top-rated style-01 rows-space-30 col-bg-3 col-xl-3 col-lg-4 col-md-4 col-sm-6 col-ts-6 post-22 product type-product status-publish has-post-thumbnail product_cat-table product_cat-bed product_cat-lamp product_tag-table product_tag-hat product_tag-sock last instock featured downloadable shipping-taxable purchasable product-type-simple">
-                                        <div class="product-inner tooltip-left">
-                                            <div class="product-thumb">
-                                                <a class="thumb-link"
-                                                   href="single-product.html">
-                                                    <img class="img-responsive"
-                                                         src="client_asset/images/apro181-2-270x350.jpg"
-                                                         alt="Soccer Shoes" width="270" height="350">
-                                                </a>
-                                                <div class="flash">
-                                                    <span class="onnew"><span class="text">New</span></span></div>
-                                                <div class="group-button">
-                                                    <div class="yith-wcwl-add-to-wishlist">
-                                                        <div class="yith-wcwl-add-button show">
-                                                            <a href="wishlist.html" class="add_to_wishlist">Add to Wishlist</a>
-                                                        </div>
-                                                    </div>
-                                                    <div class="kodory product compare-button">
-                                                        <a href="compare.html" class="compare button">Compare</a>
-                                                    </div>
-                                                    <a href="#" class="button yith-wcqv-button">Quick View</a>
-                                                    <div class="add-to-cart">
-                                                        <a href="cart.html"
-                                                           class="button product_type_simple add_to_cart_button ajax_add_to_cart">Add
-                                                            to cart</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="product-info equal-elem">
-                                                <h3 class="product-name product_title">
-                                                    <a href="single-product.html">Soccer Shoes</a>
-                                                </h3>
-                                                <div class="rating-wapper nostar">
-                                                    <div class="star-rating"><span style="width:0%">Rated <strong
-                                                                class="rating">0</strong> out of 5</span></div>
-                                                    <span class="review">(0)</span></div>
-                                                <span class="price"><span class="kodory-Price-amount amount"><span
-                                                            class="kodory-Price-currencySymbol">$</span>98.00</span></span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="product-item top-rated style-01 rows-space-30 col-bg-3 col-xl-3 col-lg-4 col-md-4 col-sm-6 col-ts-6 post-35 product type-product status-publish has-post-thumbnail product_cat-chair product_cat-new-arrivals product_cat-lamp product_tag-light product_tag-hat product_tag-sock first instock shipping-taxable purchasable product-type-simple">
-                                        <div class="product-inner tooltip-left">
-                                            <div class="product-thumb">
-                                                <a class="thumb-link"
-                                                   href="single-product.html">
-                                                    <img class="img-responsive"
-                                                         src="client_asset/images/apro41-1-270x350.jpg"
-                                                         alt="Cute Shoes" width="270" height="350">
-                                                </a>
-                                                <div class="flash">
-                                                    <span class="onnew"><span class="text">New</span></span></div>
-                                                <div class="group-button">
-                                                    <div class="yith-wcwl-add-to-wishlist">
-                                                        <div class="yith-wcwl-add-button show">
-                                                            <a href="wishlist.html" class="add_to_wishlist">Add to Wishlist</a>
-                                                        </div>
-                                                    </div>
-                                                    <div class="kodory product compare-button">
-                                                        <a href="compare.html" class="compare button">Compare</a>
-                                                    </div>
-                                                    <a href="#" class="button yith-wcqv-button">Quick View</a>
-                                                    <div class="add-to-cart">
-                                                        <a href="cart.html"
-                                                           class="button product_type_simple add_to_cart_button ajax_add_to_cart">Add
-                                                            to cart</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="product-info equal-elem">
-                                                <h3 class="product-name product_title">
-                                                    <a href="single-product.html">Cute Shoes</a>
-                                                </h3>
-                                                <div class="rating-wapper nostar">
-                                                    <div class="star-rating"><span style="width:0%">Rated <strong
-                                                                class="rating">0</strong> out of 5</span></div>
-                                                    <span class="review">(0)</span></div>
-                                                <span class="price"><span class="kodory-Price-amount amount"><span
-                                                            class="kodory-Price-currencySymbol">$</span>134.00</span></span>
-                                            </div>
-                                        </div>
-                                    </div>
+                                    @endforeach
                                 </div>
                                 <!-- OWL Products -->
                             </div>

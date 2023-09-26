@@ -44,7 +44,7 @@ class ProductsModel extends Model
 
     public function getDetail($id){
         $detail = DB::table($this->table)
-            ->select('id','name','alias', 'brief','description', 'category_id','category_name', 'image', 'created_at')
+            ->select('id','name','alias', 'brief','description', 'category_id','category_name', 'image', 'price_range_1' , 'price_range_2' , 'created_at')
             ->where([
                 ['id','=' , $id],
                 ['published', '=', 1],
