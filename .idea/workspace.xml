@@ -20,17 +20,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="866b1147-57aa-46bf-896a-cb54ff7b0fd2" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Helpers/CommonHelper.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/DevLaptop.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/DevLaptop.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/seeds/seedUsersTable.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/client/products/ProductsModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/client/products/ProductsModel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/client/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/client/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/client/products/detail.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/client/products/detail.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/LoginController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/LoginController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/database.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/database.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/devlaptop.sql" beforeDir="false" afterPath="$PROJECT_DIR$/devlaptop.sql" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -368,8 +362,17 @@
       <workItem from="1694712284917" duration="1878000" />
       <workItem from="1694791685563" duration="841000" />
       <workItem from="1695134534400" duration="1151000" />
-      <workItem from="1695720498453" duration="703000" />
+      <workItem from="1695720498453" duration="942000" />
+      <workItem from="1696130633684" duration="4123000" />
     </task>
+    <task id="LOCAL-00001" summary="update code 26/09/2023">
+      <created>1695723366156</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1695723366156</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -387,7 +390,19 @@
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="update code 26/09/2023" />
+    <option name="LAST_COMMIT_MESSAGE" value="update code 26/09/2023" />
+  </component>
   <component name="WindowStateProjectService">
+    <state x="872" y="420" key="Vcs.Push.Dialog.v2" timestamp="1695723369880">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="872" y="420" key="Vcs.Push.Dialog.v2/0.0.2560.1400@0.0.2560.1400" timestamp="1695723369880" />
+    <state x="987" y="302" width="585" height="795" key="find.popup" timestamp="1696130741993">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="987" y="302" width="585" height="795" key="find.popup/0.0.2560.1400@0.0.2560.1400" timestamp="1696130741993" />
     <state x="943" y="319" width="672" height="678" key="search.everywhere.popup" timestamp="1694705929869">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>

@@ -36,7 +36,7 @@ class LoginController extends Controller
     public function postLogin(LoginRequest $request)
     {
 //        dd($request->all());
-//        dd(Hash::make('admin'));
+//        dd(Hash::make('admin!@#'));
         $login = [
             'username' => $request->username,
             'password' => $request->password,
