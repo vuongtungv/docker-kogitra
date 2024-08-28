@@ -1,7 +1,1 @@
-{
-"version": 3,
-"mappings": "AACI,yBAAQ;EACJ,YAAY,EAAE,OAAO;EACrB,gBAAgB,EAAE,OAAO;EACzB,OAAO,EAAE,OAAO;EAChB,WAAW,EAAE,yBAAyB;EACtC,WAAW,EAAE,MAAM",
-"sources": ["css_client.scss"],
-"names": [],
-"file": "css_client.css"
-}
+{"version":3,"sourceRoot":"","sources":["css_client.scss"],"names":[],"mappings":"AACI;EACI;EACA;EACA;EACA;EACA;;;AAGR;EACI;;;AAGA;EACI","file":"css_client.css"}

@@ -155,8 +155,12 @@
                                                 <h3 class="product-name product_title">
                                                     <a href="{{ route('client_detail_product', ['id' => $item->id, 'alias' => $item->alias]) }}">{{$item->name}}</a>
                                                 </h3>
-                                                <span class="price"><span class="kodory-Price-amount amount"><span
-                                                            class="kodory-Price-currencySymbol"></span>{{$item->price_range_1}}</span> đ</span>
+                                                <span class="price">
+                                                    <span class="kodory-Price-amount amount">
+                                                        <span class="kodory-Price-currencySymbol"></span>
+                                                        {{formatPrice($item->price_range_1)}}
+                                                    </span>
+                                                </span>
                                             </div>
                                         </div>
                                     </div>

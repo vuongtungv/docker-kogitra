@@ -20,11 +20,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="866b1147-57aa-46bf-896a-cb54ff7b0fd2" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/database/seeds/seedUsersTable.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/watcherTasks.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/watcherTasks.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/LoginController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/LoginController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/database.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/database.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/devlaptop.sql" beforeDir="false" afterPath="$PROJECT_DIR$/devlaptop.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/client_asset/css_client/css_client.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/client_asset/css_client/css_client.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/client_asset/css_client/css_client.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/public/client_asset/css_client/css_client.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/client_asset/css_client/css_client.scss" beforeDir="false" afterPath="$PROJECT_DIR$/public/client_asset/css_client/css_client.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/client/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/client/index.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -165,6 +167,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="NewWatcherDialog.advanced.open" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file://C:/xampp/htdocs/DevLaptop/.env" />
@@ -179,7 +182,7 @@
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="watcher.settings" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -363,7 +366,12 @@
       <workItem from="1694791685563" duration="841000" />
       <workItem from="1695134534400" duration="1151000" />
       <workItem from="1695720498453" duration="942000" />
-      <workItem from="1696130633684" duration="4123000" />
+      <workItem from="1696130633684" duration="5026000" />
+      <workItem from="1723990701090" duration="1311000" />
+      <workItem from="1724079172994" duration="1021000" />
+      <workItem from="1724164430163" duration="2364000" />
+      <workItem from="1724682583192" duration="1155000" />
+      <workItem from="1724856510681" duration="1434000" />
     </task>
     <task id="LOCAL-00001" summary="update code 26/09/2023">
       <created>1695723366156</created>
@@ -372,7 +380,14 @@
       <option name="project" value="LOCAL" />
       <updated>1695723366156</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="update">
+      <created>1696135733492</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1696135733493</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -392,21 +407,26 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="update code 26/09/2023" />
-    <option name="LAST_COMMIT_MESSAGE" value="update code 26/09/2023" />
+    <MESSAGE value="update" />
+    <option name="LAST_COMMIT_MESSAGE" value="update" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="872" y="420" key="Vcs.Push.Dialog.v2" timestamp="1695723369880">
-      <screen x="0" y="0" width="2560" height="1400" />
+    <state x="949" y="474" width="662" height="678" key="EditFileWatcherDialog" timestamp="1723990875606">
+      <screen x="0" y="0" width="2560" height="1392" />
     </state>
-    <state x="872" y="420" key="Vcs.Push.Dialog.v2/0.0.2560.1400@0.0.2560.1400" timestamp="1695723369880" />
-    <state x="987" y="302" width="585" height="795" key="find.popup" timestamp="1696130741993">
-      <screen x="0" y="0" width="2560" height="1400" />
+    <state x="949" y="474" width="662" height="678" key="EditFileWatcherDialog/0.0.2560.1392@0.0.2560.1392" timestamp="1723990875606" />
+    <state x="1060" y="451" key="FileChooserDialogImpl" timestamp="1723990861310">
+      <screen x="0" y="0" width="2560" height="1392" />
     </state>
-    <state x="987" y="302" width="585" height="795" key="find.popup/0.0.2560.1400@0.0.2560.1400" timestamp="1696130741993" />
-    <state x="943" y="319" width="672" height="678" key="search.everywhere.popup" timestamp="1694705929869">
-      <screen x="0" y="0" width="2560" height="1400" />
+    <state x="1060" y="451" key="FileChooserDialogImpl/0.0.2560.1392@0.0.2560.1392" timestamp="1723990861310" />
+    <state x="781" y="341" key="SettingsEditor" timestamp="1723990876879">
+      <screen x="0" y="0" width="2560" height="1392" />
     </state>
-    <state x="943" y="319" width="672" height="678" key="search.everywhere.popup/0.0.2560.1400@0.0.2560.1400" timestamp="1694705929869" />
+    <state x="781" y="341" key="SettingsEditor/0.0.2560.1392@0.0.2560.1392" timestamp="1723990876879" />
+    <state x="987" y="431" width="585" height="530" key="find.popup" timestamp="1723991247127">
+      <screen x="0" y="0" width="2560" height="1392" />
+    </state>
+    <state x="987" y="431" width="585" height="530" key="find.popup/0.0.2560.1392@0.0.2560.1392" timestamp="1723991247127" />
   </component>
   <component name="masterDetails">
     <states>
