@@ -20,7 +20,10 @@
   font-style: normal; }
 .login {
   background-color: #5c97bd;
-  font-family: Roboto-Regular; }
+  font-family: Roboto-Regular;
+  height: 100vh;
+  overflow: hidden;
+  position: relative; }
 
 .logo {
   margin: 100px auto 0;
@@ -77,7 +80,11 @@
     color: #d9ecf9; }
 
 .copyright {
-  text-align: center; }
+  text-align: center;
+  width: 100%;
+  position: absolute;
+  top: 80%;
+  height: fit-content; }
 
 .show-errors-alert {
   transition: all 0.4s;

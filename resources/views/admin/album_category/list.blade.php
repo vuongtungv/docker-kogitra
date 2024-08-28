@@ -23,7 +23,7 @@
                         {{session('notification')}}
                     </div>
                 @endif
-                <table class="table table-striped table-bordered table-hover" id="dataTables-example">
+                <table class="table table-striped table-bordered table-hover table-style-default" id="dataTables-example">
                     <thead>
                     <tr align="center">
                         <th>ID</th>

@@ -22,7 +22,7 @@ class LoginController extends Controller
 
         if (Auth::check()) {
             // nếu đăng nhập thàng công thì
-            return Redirect::route('home');
+            return Redirect::route('admin_home');
         } else {
             return view('admin.login');
         }
@@ -36,7 +36,7 @@ class LoginController extends Controller
     public function postLogin(LoginRequest $request)
     {
 //        dd($request->all());
-//        dd(Hash::make('admin'));
+//        dd(Hash::make('admin!@#'));
         $login = [
             'username' => $request->username,
             'password' => $request->password,

@@ -86,7 +86,7 @@
                     </div>
 
                     <div class="form-group form-md-line-input form-md-floating-label">
-                        <input type="number" class="form-control" name="ordering" id="ordering">
+                        <input type="number" class="form-control" name="ordering" id="ordering" value="{{$detail->ordering}}">
                         <label for="alias">Số tứ tự</label>
                     </div>
 
@@ -95,7 +95,7 @@
                             <div class="fileinput-preview thumbnail" data-trigger="fileinput"
                                  style="width: 200px; height: 150px;">
                                 {{--                                {{ dd(url('storage/app/public/images/'.$detail->image)) }}--}}
-                                <img src="{{ $detail->image ? '/storage/app/public/'.$detail->image : ''}}" alt="">
+                                <img src="{{ $detail->image ? 'storage/'.$detail->image : ''}}" alt="">
                             </div>
                             <div>
                             <span class="btn red btn-outline btn-file">

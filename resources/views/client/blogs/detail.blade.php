@@ -22,7 +22,7 @@
                     class="post-item post-single post-195 post type-post status-publish format-standard has-post-thumbnail hentry category-light category-table category-life-style tag-light tag-life-style">
                     <div class="single-post-thumb">
                         <div class="post-thumb">
-                            <img src="{{ '/storage/app/public/'.str_replace('/original/','/large/',$detail->image )}}"
+                            <img src="{{ 'storage/'.str_replace('/original/','/large/',$detail->image )}}"
                                  class="attachment-full size-full wp-post-image" alt="img"></div>
                     </div>
                     <div class="single-post-info">
@@ -109,7 +109,7 @@
                                     <div class="post-item-inner">
                                         <div class="post-thumb">
                                             <a href="#">
-                                                <img src="{{ '/storage/app/public/'.str_replace('/original/','/tiny/',$item->image )}}"
+                                                <img src="{{ 'storage/'.str_replace('/original/','/tiny/',$item->image )}}"
                                                      class="img-responsive attachment-83x83 size-83x83" alt="img" width="83"
                                                      height="83"> </a>
                                         </div>

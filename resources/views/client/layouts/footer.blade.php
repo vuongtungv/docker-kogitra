@@ -149,7 +149,7 @@
                 </div>
                 <div class="col-md-6">
                     <div class="payment">
-                        <img src="client_asset/images/payment.png"
+                        <img src="logo_text_108_36.png"
                              class="az_single_image-img attachment-full" alt="img">
                     </div>
                 </div>

@@ -1,0 +1,51 @@
+version: "3.7"
+services:
+    web:
+        build:
+            context: ./
+            dockerfile: .dockers/Dockerfile
+        container_name: example-docker-web
+        restart: unless-stopped
+        working_dir: /var/www
+        volumes:
+            - ./:/var/www
+            - ./.dockers/php/php.ini:/usr/local/etc/php/conf.d/php.ini
+        networks:
+            - example_docker_net
+
+    db:
+        image: 'mysql:latest'
+        container_name: example-docker-db
+        restart: unless-stopped
+        environment:
+            MYSQL_DATABASE: example-docker
+            MYSQL_ROOT_PASSWORD: example
+            MYSQL_PASSWORD: example
+            MYSQL_USER: example
+        volumes:
+            - ./.dockers/mysql:/var/lib/mysql
+            - ./.dockers/mysql:/etc/mysql/conf.d
+        ports:
+            - "3388:3306"
+        networks:
+            - example_docker_net
+    nginx:
+        image: nginx:alpine
+        container_name: example-docker-nginx
+        restart: unless-stopped
+        ports:
+            - "8888:8888"
+        links:
+            - web
+            - db
+        volumes:
+            - ./:/var/www
+            - ./.dockers/nginx:/etc/nginx/conf.d/
+            - ./.dockers/logs/nginx:/var/log/nginx
+        networks:
+            - example_docker_net
+
+
+networks:
+    example_docker_net:
+        driver: bridge

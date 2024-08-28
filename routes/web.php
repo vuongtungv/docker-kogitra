@@ -33,6 +33,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::post('/admin/login', 'Admin\LoginController@postLogin')->name('post_admin_login');
 Route::get('/admin/login', [ 'uses' => 'Admin\LoginController@getLogin'])->name('admin_login');
+Route::get('/admin', [ 'uses' => 'Admin\LoginController@getLogin'])->name('admin_login');
 
 Route::group(['middleware' => 'checkAdminLogin', '/admin', 'prefix'=> 'admin'],function () {
     Route::group(['middleware' => 'checkAdminLogin', 'prefix' => '/', 'namespace' => 'admin'], function () {
@@ -49,9 +50,6 @@ Route::group(['middleware' => 'checkAdminLogin', '/admin', 'prefix'=> 'admin'],f
         return view('admin.layouts.dashboard');
     })->name('admin_dashboard');
 
-    // sản phẩm
-    Route::get('/product/category', [ 'uses' => 'Admin\products\ProductsCategoryController@index'])->name('admin_products_category');
-    Route::get('/product/list', [ 'uses' => 'Admin\products\ProductsController@index'])->name('admin_products');
 
 
     // tin tức
@@ -76,6 +74,13 @@ Route::group(['middleware' => 'checkAdminLogin', '/admin', 'prefix'=> 'admin'],f
     Route::get('/menu/edit/{id}', [ 'uses' => 'Admin\menu\MenuController@view_edit'])->name('admin_edit_menu');
     Route::post('/menu/edit/{id}', [ 'uses' => 'Admin\menu\MenuController@update'])->name('post_admin_edit_menu');
 
+    // brands
+    Route::get('/brands', [ 'uses' => 'Admin\brands\BrandsController@index'])->name('admin_brands');
+    Route::get('/brands/add', [ 'uses' => 'Admin\brands\BrandsController@view_add'])->name('admin_add_brands');
+    Route::post('/brands/add', [ 'uses' => 'Admin\brands\BrandsController@add'])->name('post_admin_add_brands');
+    Route::get('/brands/edit/{id}', [ 'uses' => 'Admin\brands\BrandsController@view_edit'])->name('admin_edit_brands');
+    Route::post('/brands/edit/{id}', [ 'uses' => 'Admin\brands\BrandsController@update'])->name('post_admin_edit_brands');
+
 
 
     // Banners
@@ -92,13 +97,49 @@ Route::group(['middleware' => 'checkAdminLogin', '/admin', 'prefix'=> 'admin'],f
     Route::post('/banners/list/edit/{id}', [ 'uses' => 'Admin\banners\BannersController@update'])->name('post_admin_edit_banners');
 
 
+    // products
+    Route::get('/product/config/style', [ 'uses' => 'Admin\products\StyleController@index'])->name('admin_product_style');
+    Route::get('/product/config/style/add', [ 'uses' => 'Admin\products\StyleController@view_add'])->name('admin_product_style_add');
+    Route::post('/product/config/style/add', [ 'uses' => 'Admin\products\StyleController@add'])->name('post_admin_product_style_add');
+    Route::get('/product/config/style/edit/{id}', [ 'uses' => 'Admin\products\StyleController@view_edit'])->name('admin_edit_product_style');
+    Route::post('/product/config/style/edit/{id}', [ 'uses' => 'Admin\products\StyleController@update'])->name('post_admin_edit_product_style');
+
+    Route::get('/product/config/color', [ 'uses' => 'Admin\products\ColorController@index'])->name('admin_product_color');
+    Route::get('/product/config/color/add', [ 'uses' => 'Admin\products\ColorController@view_add'])->name('admin_product_color_add');
+    Route::post('/product/config/color/add', [ 'uses' => 'Admin\products\ColorController@add'])->name('post_admin_product_color_add');
+    Route::get('/product/config/color/edit/{id}', [ 'uses' => 'Admin\products\ColorController@view_edit'])->name('admin_edit_product_color');
+    Route::post('/product/config/color/edit/{id}', [ 'uses' => 'Admin\products\ColorController@update'])->name('post_admin_edit_product_color');
+
+    Route::get('/product/config/size', [ 'uses' => 'Admin\products\SizeController@index'])->name('admin_product_size');
+    Route::get('/product/config/size/add', [ 'uses' => 'Admin\products\SizeController@view_add'])->name('admin_product_size_add');
+    Route::post('/product/config/size/add', [ 'uses' => 'Admin\products\SizeController@add'])->name('post_admin_product_size_add');
+    Route::get('/product/config/size/edit/{id}', [ 'uses' => 'Admin\products\SizeController@view_edit'])->name('admin_edit_product_size');
+    Route::post('/product/config/size/edit/{id}', [ 'uses' => 'Admin\products\SizeController@update'])->name('post_admin_edit_product_size');
+
+
+    Route::get('/product/category', [ 'uses' => 'Admin\products\ProductsCategoryController@index'])->name('admin_products_category');
+    Route::get('/product/category/add', [ 'uses' => 'Admin\products\ProductsCategoryController@view_add'])->name('admin_add_products_category');
+    Route::post('/product/category/add', [ 'uses' => 'Admin\products\ProductsCategoryController@add'])->name('post_admin_add_products_category');
+    Route::get('/product/category/edit/{id}', [ 'uses' => 'Admin\products\ProductsCategoryController@view_edit'])->name('admin_edit_products_category');
+    Route::post('/product/category/edit/{id}', [ 'uses' => 'Admin\products\ProductsCategoryController@update'])->name('post_admin_edit_products_category');
+
+    Route::get('/product/product', [ 'uses' => 'Admin\products\ProductsController@index'])->name('admin_products_products');
+    Route::get('/product/product/add', [ 'uses' => 'Admin\products\ProductsController@create'])->name('admin_add_products_products');
+    Route::post('/product/product', [ 'uses' => 'Admin\products\ProductsController@store'])->name('post_admin_add_products_products');
+    Route::get('/product/product/edit/{id}', [ 'uses' => 'Admin\products\ProductsController@show'])->name('admin_edit_products_products');
+    Route::post('/product/product/delete/image', [ 'uses' => 'Admin\products\ProductsController@deleteItemImage'])->name('delete_item_image_in_detail_product');
+    Route::post('/product/product/delete/option', [ 'uses' => 'Admin\products\ProductsController@deleteOption'])->name('delete_item_option_in_detail_product');
+    Route::post('/product/product/edit/{id}', [ 'uses' => 'Admin\products\ProductsController@update'])->name('post_admin_edit_products_products');
+    Route::post('/product/product/delete', [ 'uses' => 'Admin\products\ProductsController@destroy'])->name('admin_delete_products_products');
+
 });
 
 
 
 // ROUTE CLIENT
 
-Route::get('/index.html', ['uses' => 'Client\HomeController@index'])->name('client_home');
+Route::get('/', ['uses' => 'Client\HomeController@index'])->name('client_home');
+Route::get('/home.html', ['uses' => 'Client\HomeController@index'])->name('client_home');
 
 
 // news home
@@ -108,6 +149,9 @@ Route::get('/blogs/home/{page}.html', [ 'uses' => 'Client\news\NewsController@in
 // category news
 Route::get('/blogs/category-{id}/{alias}.html', [ 'uses' => 'Client\news\NewsController@listByCategory'])->name('client_news_list_by_category')->where(['id' => '[0-9]+']);
 Route::get('/blogs/category-{id}/{alias}/{page?}.html', [ 'uses' => 'Client\news\NewsController@listByCategoryWithPage'])->name('client_news_list_by_category_with_page')->where(['id' => '[0-9]+', 'page'=> '[0-9]+']);
-
-
 Route::get('/blogs/{id}/{alias}.html', [ 'uses' => 'Client\news\NewsController@detail'])->name('client_detail_news')->where(['id' => '[0-9]+']);
+
+
+
+// product
+Route::get('/product/{id}/{alias}.html', [ 'uses' => 'Client\products\ProductsController@detail'])->name('client_detail_product')->where(['id' => '[0-9]+']);
