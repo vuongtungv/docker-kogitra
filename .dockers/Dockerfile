@@ -1,70 +1,51 @@
-FROM php:8.2.0-fpm
+FROM php:7.4-fpm
 
-RUN apt-get clean && apt-get update \
-    &&  apt-get install -y --no-install-recommends \
-        locales \
-        apt-utils \
-        git \
-        libicu-dev \
-        g++ \
-        zip \
-        libpng-dev \
-        libxml2-dev \
-        libzip-dev \
-        libonig-dev \
-        libxslt-dev \
-        unzip \
-        libpq-dev \
-        nodejs \
-        npm \
-        wget \
-        apt-transport-https \
-        lsb-release \
-        ca-certificates
+RUN apt-get update && apt-get install -y \
+    git \
+    curl \
+    libpng-dev \
+    libonig-dev \
+    libxml2-dev \
+    libzip-dev \
+    zip \
+    vim \
+    unzip \
+    libfreetype6-dev \
+    libjpeg62-turbo-dev \
+    gnupg2
 
-# Install extensions
-RUN docker-php-ext-install pdo_mysql
-RUN apt-get install -y \
-        libonig-dev \
-    && docker-php-ext-install iconv mbstring
-RUN apt-get install -y \
-        libfreetype6-dev \
-        libjpeg62-turbo-dev \
-        libpng-dev \
-    && docker-php-ext-configure gd --with-freetype --with-jpeg \
-    && docker-php-ext-install -j$(nproc) gd
+RUN docker-php-ext-install pdo pdo_mysql
 
 # install ldap extension
 RUN apt-get update && apt-get install -y \
     libldap2-dev
 RUN docker-php-ext-configure ldap --with-libdir=lib/x86_64-linux-gnu/
-RUN docker-php-ext-install ldap bcmath
+RUN docker-php-ext-configure gd --enable-gd --with-freetype --with-jpeg
+RUN docker-php-ext-install ldap gd mbstring zip bcmath
 
-# Redis is installed, enable it
-RUN pecl install redis \
-    && docker-php-ext-enable redis
+RUN curl -sL https://deb.nodesource.com/setup_16.x | bash -
+RUN apt -y install nodejs
+RUN apt -y install gcc g++ make
+RUN curl -sL https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add -
+RUN echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list
+RUN apt update && apt install yarn
 
-# Clear cache
-RUN apt-get clean && rm -rf /var/lib/apt/lists/*
+# Composer install
+RUN cd /usr/bin && curl -s http://getcomposer.org/installer | php && ln -s /usr/bin/composer.phar /usr/local/bin/composer
 
-# Install composer
-RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
+RUN apt-get update && apt-get install -y cron
 
-# Install nodejs
-RUN curl -fsSL https://deb.nodesource.com/setup_14.x | bash -
-RUN apt-get install -y nodejs
+# Create the log file to be able to run tail
+RUN touch /var/log/cron.log
 
-# Add user for laravel application
-RUN groupadd -g 1000 www
-RUN useradd -u 1000 -ms /bin/bash -g www www
+# Configure cron
+RUN touch /etc/crontab
+RUN chmod 0644 /etc/crontab
+RUN echo "* * * * * cd /var/www/admin && php artisan schedule:run >> /var/log/cron.log 2>&1" >> /etc/crontab
+RUN crontab /etc/crontab
 
-# Permission
-RUN chown -R www:www /var/www
 
-RUN usermod -s /bin/bash www
+COPY . /var/www
+WORKDIR /var/www
 
-# Expose port 9000 and start php-fpm server
 EXPOSE 9000
-CMD ["php-fpm"]
-
-WORKDIR /var/www/

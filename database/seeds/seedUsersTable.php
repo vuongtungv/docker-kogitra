@@ -22,7 +22,7 @@ class seedUsersTable extends Seeder
 
         DB::table('users')->insert([
             'username' => 'admin',
-            'password' => '$2b$10$Q7Q6tRpGVWLO4kwSeHGtGOsd3qL12Gu8cC2nyZ9o6gAHicyfZo4Am',
+            'password' => Hash::make('Admin@321'),
             'full_name' => 'Vương Sỹ Tùng',
             'email' => 'vuongtungv@gmail.com',
             'status' => 1,
