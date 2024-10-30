@@ -1,51 +1,44 @@
-FROM php:7.4-fpm
+# Sử dụng PHP 8.0 FPM
+FROM php:8.0-fpm
 
+# Cài đặt các tiện ích cơ bản
 RUN apt-get update && apt-get install -y \
+    zip \
+    unzip \
     git \
     curl \
     libpng-dev \
+    libjpeg-dev \
+    libfreetype6-dev \
     libonig-dev \
     libxml2-dev \
     libzip-dev \
-    zip \
-    vim \
-    unzip \
-    libfreetype6-dev \
-    libjpeg62-turbo-dev \
-    gnupg2
+    && docker-php-ext-configure gd --with-freetype --with-jpeg \
+    && docker-php-ext-install gd \
+    && docker-php-ext-install pdo pdo_mysql mbstring zip exif pcntl bcmath
 
-RUN docker-php-ext-install pdo pdo_mysql
+# Cài đặt Composer
+COPY --from=composer:2.2 /usr/bin/composer /usr/bin/composer
 
-# install ldap extension
-RUN apt-get update && apt-get install -y \
-    libldap2-dev
-RUN docker-php-ext-configure ldap --with-libdir=lib/x86_64-linux-gnu/
-RUN docker-php-ext-configure gd --enable-gd --with-freetype --with-jpeg
-RUN docker-php-ext-install ldap gd mbstring zip bcmath
-
-RUN curl -sL https://deb.nodesource.com/setup_16.x | bash -
-RUN apt -y install nodejs
-RUN apt -y install gcc g++ make
-RUN curl -sL https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add -
-RUN echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list
-RUN apt update && apt install yarn
-
-# Composer install
-RUN cd /usr/bin && curl -s http://getcomposer.org/installer | php && ln -s /usr/bin/composer.phar /usr/local/bin/composer
-
-RUN apt-get update && apt-get install -y cron
-
-# Create the log file to be able to run tail
-RUN touch /var/log/cron.log
-
-# Configure cron
-RUN touch /etc/crontab
-RUN chmod 0644 /etc/crontab
-RUN echo "* * * * * cd /var/www/admin && php artisan schedule:run >> /var/log/cron.log 2>&1" >> /etc/crontab
-RUN crontab /etc/crontab
-
-
-COPY . /var/www
+# Thiết lập thư mục làm việc
 WORKDIR /var/www
 
+# Copy mã nguồn vào container
+COPY . .
+
+# Cấp quyền cho thư mục storage và bootstrap/cache
+RUN chown -R www-data:www-data /var/www \
+    && chmod -R 755 /var/www/storage \
+    && chmod -R 755 /var/www/bootstrap/cache
+
+# Thiết lập người dùng www-data (người dùng mặc định của Nginx/Apache)
+USER www-data
+
+# Chạy Composer để cài đặt các phụ thuộc của Laravel
+RUN composer install --no-scripts --no-autoloader
+
+# Expose cổng 9000 cho PHP-FPM
 EXPOSE 9000
+
+# Lệnh mặc định để chạy PHP-FPM
+CMD ["php-fpm"]

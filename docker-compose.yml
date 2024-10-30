@@ -10,6 +10,8 @@ services:
     volumes:
       - ./:/var/www
       - ./.dockers/php/php.ini:/usr/local/etc/php/conf.d/php.ini
+    expose:
+      - "9000"
     networks:
       - devlaptop_net
   db:
@@ -33,7 +35,7 @@ services:
     container_name: devlaptop-nginx
     restart: unless-stopped
     ports:
-      - "8888:8888"
+      - "8888:80"
     links:
       - web
       - db
