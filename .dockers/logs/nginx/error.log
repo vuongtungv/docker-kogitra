@@ -215,3 +215,5 @@
 2024/10/30 09:15:18 [notice] 1#1: start worker process 25
 2024/10/30 09:15:18 [notice] 1#1: start worker process 26
 2024/10/30 09:15:18 [notice] 1#1: start worker process 27
+2024/10/30 09:18:09 [error] 20#20: *2 directory index of "/var/www/public/storage/" is forbidden, client: 172.22.0.1, server: localhost, request: "GET /storage/ HTTP/1.1", host: "localhost:8888", referrer: "http://localhost:8888/client"
+2024/10/30 09:22:47 [error] 23#23: *6 directory index of "/var/www/public/storage/" is forbidden, client: 172.22.0.1, server: localhost, request: "GET /storage/ HTTP/1.1", host: "localhost:8888", referrer: "http://localhost:8888/a"
