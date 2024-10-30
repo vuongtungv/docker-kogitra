@@ -31,10 +31,7 @@ use Illuminate\Support\Facades\Route;
 //
 //});
 
-Route::get('/', function () {
-    return view('welcome');
-});
-//Route::get('/', ['uses' => 'Client\HomeController@index'])->name('client_home');
+Route::get('/', ['uses' => 'Client\HomeController@index'])->name('client_home');
 
 Route::post('/admin/login', 'Admin\LoginController@postLogin')->name('post_admin_login');
 Route::get('/admin/login', [ 'uses' => 'Admin\LoginController@getLogin'])->name('admin_login');
